@@ -152,21 +152,20 @@
     letter-spacing:.01em;
     position:relative;
     text-shadow:
-      0 0 4px rgba(196,255,26,.9),
-      0 0 22px rgba(196,255,26,.55),
-      0 0 48px rgba(255,46,126,.35);
-    animation:sprayOn 1s ease .15s both, flicker 7s infinite 1.4s;
+      0 2px 6px rgba(0,0,0,.6),
+      0 0 16px rgba(196,255,26,.22);
+    animation:sprayOn 1s ease .15s both, flicker 9s infinite 1.4s;
   }
   .title .name{color:var(--gold);
-    text-shadow:0 0 6px rgba(255,210,63,.9),0 0 26px rgba(255,210,63,.55);}
+    text-shadow:0 2px 6px rgba(0,0,0,.6),0 0 16px rgba(255,210,63,.25);}
 
   @keyframes sprayOn{
     0%{opacity:0;filter:blur(16px);transform:scale(1.08)}
     60%{opacity:1;filter:blur(0)}
   }
   @keyframes flicker{
-    0%,93%,100%{opacity:1}
-    94%{opacity:.55}95%{opacity:1}96%{opacity:.7}97%{opacity:1}
+    0%,95%,100%{opacity:1}
+    96%{opacity:.82}97%{opacity:1}98%{opacity:.9}99%{opacity:1}
   }
 
   /* spray underline w/ drips */
