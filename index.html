@@ -217,6 +217,10 @@
   .cell:nth-child(2) .num{color:var(--spray-cyan);text-shadow:0 0 10px rgba(25,240,216,.55)}
   .cell:nth-child(3) .num{color:var(--spray-orange);text-shadow:0 0 10px rgba(255,106,19,.55)}
   .cell:nth-child(4) .num{color:var(--spray-pink);text-shadow:0 0 10px rgba(255,46,126,.55)}
+  .cell:nth-child(5) .num{color:var(--gold);text-shadow:0 0 10px rgba(255,210,63,.5)}
+  .cell:nth-child(5){animation-delay:1.35s}
+  .cell--ms{min-width:clamp(72px,16vw,124px)}
+  .cell--ms .num{font-size:clamp(1.7rem,6.5vw,3.8rem)}
   .num.tick{transform:scale(1.12)}
 
   .lbl{
@@ -323,17 +327,17 @@
       <div class="cell"><div class="num" id="h">00</div><div class="lbl">Horas</div></div>
       <div class="cell"><div class="num" id="m">00</div><div class="lbl">Min</div></div>
       <div class="cell"><div class="num" id="s">00</div><div class="lbl">Seg</div></div>
+      <div class="cell cell--ms"><div class="num" id="ms">000</div><div class="lbl">Ms</div></div>
     </div>
 
     <p class="when">📅 20 JUN 2026 · <b>19:00</b> · Gerli, Lanús</p>
 
     <div class="crew">
-      <span class="tag">Leon</span>
       <span class="tag">Felipe</span>
       <span class="tag">Luca</span>
       <span class="tag">Mati</span>
       <span class="tag">Alejo</span>
-      <span class="tag host">Gianni<small>★ Cumpleañero ★</small></span>
+      <span class="tag host">Gianni<small>★ Leon, el cumpleañero ★</small></span>
     </div>
   </main>
 
@@ -348,17 +352,17 @@
   const TARGET = new Date('2026-06-20T19:00:00-03:00').getTime();
 
   const el = { d:document.getElementById('d'), h:document.getElementById('h'),
-               m:document.getElementById('m'), s:document.getElementById('s') };
+               m:document.getElementById('m'), s:document.getElementById('s'),
+               ms:document.getElementById('ms') };
 
   // duplicate marquee for seamless loop
   const track = document.getElementById('track');
   track.innerHTML += track.innerHTML;
 
-  const pad = n => String(n).padStart(2,'0');
-  let lastS = -1;
+  const pad = (n,w=2) => String(n).padStart(w,'0');
 
-  function set(node, val){
-    const v = pad(val);
+  function set(node, val, w){
+    const v = pad(val,w);
     if(node.textContent !== v){
       node.textContent = v;
       node.classList.add('tick');
@@ -374,11 +378,14 @@
     set(el.h, Math.floor(sec%86400/3600));
     set(el.m, Math.floor(sec%3600/60));
     set(el.s, sec%60);
+    el.ms.textContent = pad(diff%1000,3);   // sin tick: cambia cada frame
+    raf = requestAnimationFrame(tick);
   }
+  let raf;
 
   let partyStarted = false;
   function done(){
-    el.d.textContent='00'; el.h.textContent='00'; el.m.textContent='00'; el.s.textContent='00';
+    el.d.textContent='00'; el.h.textContent='00'; el.m.textContent='00'; el.s.textContent='00'; el.ms.textContent='000';
     if(partyStarted) return; partyStarted = true;
     document.body.classList.add('party');
     document.querySelector('.eyebrow').textContent = '¡ARRANCÓ LA JODA! 🔥';
@@ -393,11 +400,10 @@
       c.style.animationDelay=Math.random()*2+'s';
       document.body.appendChild(c);
     }
-    clearInterval(timer);
+    cancelAnimationFrame(raf);
   }
 
   tick();
-  const timer = setInterval(tick, 1000);
 </script>
 </body>
 </html>
