@@ -157,6 +157,55 @@
 
   body.party .t-name{color:var(--red)}
 
+  /* ---- ENTRADA VIP (modal + ticket + acciones) ---- */
+  .ticket-cta{display:inline-flex;align-items:center;gap:.45em;margin-top:.1rem;cursor:pointer;
+    background:var(--gold);color:var(--ink);font-family:'Permanent Marker',cursive;font-size:clamp(1.05rem,4.4vw,1.5rem);
+    border:3px solid var(--ink);border-radius:44px;padding:.5em 1.3em;box-shadow:4px 5px 0 rgba(0,0,0,.22);
+    transform:rotate(1.2deg);transition:transform .15s}
+  .ticket-cta:hover{transform:rotate(0) translateY(-2px)}
+  .ticket-cta:active{transform:translateY(1px)}
+
+  .modal{position:fixed;inset:0;z-index:50;display:none;align-items:flex-start;justify-content:center;
+    background:rgba(10,8,6,.74);overflow-y:auto;padding:max(3vh,16px) 14px 40px;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+  .modal.open{display:flex}
+  .modal-card{position:relative;width:min(560px,100%);background:var(--paper);border:3px solid var(--ink);border-radius:14px;
+    box-shadow:8px 10px 0 rgba(0,0,0,.45);padding:clamp(1rem,4vw,1.6rem);animation:pop .4s cubic-bezier(.2,1.5,.4,1) both}
+  .modal-card h3{font-family:'Permanent Marker',cursive;font-size:clamp(1.3rem,5vw,1.9rem);text-align:center;color:var(--ink)}
+  .modal-sub{text-align:center;font-family:'Caveat',cursive;font-weight:700;color:var(--green-d);font-size:1.1rem;margin:.1rem 0 1rem}
+  .modal-close{position:absolute;top:8px;right:10px;width:38px;height:38px;border-radius:50%;border:3px solid var(--ink);
+    background:var(--paper);font-size:1.1rem;cursor:pointer;display:grid;place-items:center;box-shadow:2px 3px 0 rgba(0,0,0,.2)}
+
+  .frm{display:flex;gap:.7rem;margin-bottom:1rem}
+  .frm .f{flex:1;min-width:0}
+  .frm label{display:block;font-family:'Oswald';font-weight:700;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--green-d);margin-bottom:.25rem}
+  .frm input{width:100%;background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:10px;padding:.5rem .7rem;
+    font-family:'Permanent Marker',cursive;font-size:1.1rem;outline:none}
+  .frm input:focus{border-color:var(--green)}
+
+  .tk{display:flex;border:3px solid var(--ink);border-radius:10px;box-shadow:5px 6px 0 rgba(0,0,0,.25);overflow:hidden;background:var(--paper)}
+  .tk-body{flex:1;padding:.9rem 1rem;min-width:0}
+  .tk-eyebrow{font-family:'Caveat',cursive;font-weight:700;color:var(--green-d);font-size:1rem;transform:rotate(-2deg)}
+  .tk-eyebrow b{color:var(--ink)}
+  .tk-who{font-family:'Permanent Marker',cursive;font-size:clamp(1.5rem,6.5vw,2.3rem);line-height:.95;margin:.12rem 0 .15rem;word-break:break-word;color:var(--ink)}
+  .tk-adm{font-family:'Oswald',sans-serif;font-weight:700;font-size:.6rem;letter-spacing:.16em;color:var(--green-d)}
+  .tk-meta{display:flex;gap:1rem;font-family:'Permanent Marker',cursive;font-size:.9rem;margin-top:.5rem}
+  .tk-meta .k{display:block;font-family:'Oswald',sans-serif;font-weight:700;font-size:.55rem;letter-spacing:.12em;color:var(--green-d)}
+  .tk-barcode{height:30px;margin-top:.6rem;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 9px)}
+  .tk-stub{width:90px;flex:none;border-left:3px dashed var(--ink);padding:.8rem .4rem;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;background:var(--paper-2)}
+  .tk-vert{writing-mode:vertical-rl;font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.2em;font-size:.58rem;color:var(--green-d)}
+  .tk-num{font-family:'Permanent Marker',cursive;font-size:1.3rem;color:var(--red)}
+  .tk-lion{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid var(--ink);position:relative;flex:none}
+  .tk-lion img{position:absolute;width:185%;left:-34%;top:-70%}
+
+  .acts{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap;justify-content:center}
+  .acts .btn{display:inline-flex;align-items:center;gap:.4em;cursor:pointer;font-family:'Permanent Marker',cursive;font-size:1rem;
+    border:3px solid var(--ink);border-radius:40px;padding:.45em 1.1em;box-shadow:3px 4px 0 rgba(0,0,0,.3);transition:transform .15s}
+  .acts .btn:hover{transform:translateY(-2px)}
+  .acts .btn:active{transform:translateY(1px)}
+  .acts .wa{background:#25D366;color:#0a3d1c}
+  .acts .dl{background:var(--paper);color:var(--ink)}
+  .modal-note{text-align:center;font-family:'Caveat',cursive;font-weight:700;color:#6b6256;font-size:.95rem;margin-top:.7rem;line-height:1.3}
+
   @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
@@ -279,6 +328,8 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11 19.9L3 29l6.3-1.9A13 13 0 1 0 16 3zm0 2.4a10.6 10.6 0 1 1-5.6 19.6l-.4-.2-3.7 1.1 1.1-3.6-.3-.4A10.6 10.6 0 0 1 16 5.4zm-3.6 4.8c-.3 0-.7.1-1 .4-.4.4-1.3 1.3-1.3 3.1s1.4 3.6 1.5 3.9c.2.3 2.6 4.1 6.4 5.6 3.1 1.2 3.8 1 4.5.9.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5s-2.2-1.1-2.5-1.2c-.3-.1-.6-.2-.8.2-.2.3-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.6.1-.3.1-.5 0-.7l-1-2.5c-.3-.6-.5-.5-.8-.5h-.5z"/></svg>
       PASÁ LA VOZ
     </button>
+
+    <button class="ticket-cta" id="vipOpen">🎫 GENERÁ TU ENTRADA</button>
   </main>
 
   <div class="toast" id="toast">link copiado 📋</div>
@@ -286,6 +337,43 @@
   <div class="marquee"><div class="marquee__t" id="track">
     <span class="hot">RAP</span><span>✶</span><span>ROCK</span><span>✶</span><span class="grn">CUMBIA</span><span>✶</span><span>BIRRA</span><span>✶</span><span class="grn">HUMO</span><span>✶</span><span class="hot">EL BARRIO</span><span>✶</span>
   </div></div>
+
+  <!-- ENTRADA VIP -->
+  <div class="modal" id="vipModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-label="Generá tu entrada">
+      <button class="modal-close" id="vipClose" aria-label="Cerrar">✕</button>
+      <h3>Tu entrada VIP 🎫</h3>
+      <p class="modal-sub">Poné tu nombre y sumate a la lista</p>
+      <div class="frm">
+        <div class="f"><label for="vipNom">Nombre</label><input id="vipNom" type="text" maxlength="18" placeholder="Luca" autocomplete="given-name" /></div>
+        <div class="f"><label for="vipApe">Apellido</label><input id="vipApe" type="text" maxlength="20" placeholder="Pérez" autocomplete="family-name" /></div>
+      </div>
+      <div class="tk" id="vipTk">
+        <div class="tk-body">
+          <div class="tk-eyebrow">cumple de <b>GIANNI</b> 🦁 · alias León</div>
+          <div class="tk-who" id="vipWho">TU NOMBRE</div>
+          <div class="tk-adm">ADMITE 1 · ACCESO TOTAL A LA JODA</div>
+          <div class="tk-meta">
+            <div><span class="k">FECHA</span>20/06</div>
+            <div><span class="k">HORA</span>19 HS</div>
+            <div><span class="k">LUGAR</span>GERLI</div>
+          </div>
+          <div class="tk-barcode"></div>
+        </div>
+        <div class="tk-stub">
+          <div class="tk-lion"><img src="leon.jpeg" alt="" /></div>
+          <div class="tk-vert">ENTRADA</div>
+          <div class="tk-num" id="vipNum">000</div>
+        </div>
+      </div>
+      <div class="acts">
+        <span class="btn wa" id="vipShare" role="button" tabindex="0">📲 Compartir por WhatsApp</span>
+        <span class="btn dl" id="vipDownload" role="button" tabindex="0">⬇ Descargar PNG</span>
+      </div>
+      <p class="modal-note">En el celu comparte la <b>imagen</b> directo a WhatsApp. En la compu abre WhatsApp con texto + link (bajá el PNG para adjuntar).</p>
+    </div>
+  </div>
+  <canvas id="vipCanvas" width="1000" height="430" style="display:none"></canvas>
 
 <script>
   // ---- countdown ----
@@ -351,6 +439,102 @@
     if(navigator.share){try{await navigator.share({title:'Cumple de Gianni 🦁',text,url});return;}catch(e){if(e.name==='AbortError')return;}}
     window.open('https://wa.me/?text='+encodeURIComponent(text+' '+url),'_blank');
   };
+
+  // ---- entrada VIP ----
+  (function(){
+    const modal=document.getElementById('vipModal');
+    const nom=document.getElementById('vipNom'),ape=document.getElementById('vipApe');
+    const who=document.getElementById('vipWho'),num=document.getElementById('vipNum');
+    const canvas=document.getElementById('vipCanvas');
+    const lion=new Image(); lion.src='leon.jpeg';
+
+    const fullName=()=>(nom.value.trim()+' '+ape.value.trim()).trim();
+    function ticketNo(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return String((h>>>0)%999+1).padStart(3,'0');}
+    function refresh(){
+      const fn=fullName();
+      who.textContent=fn?fn.toUpperCase():'TU NOMBRE';
+      num.textContent=fn?ticketNo(fn.toLowerCase()):'000';
+      try{localStorage.setItem('vipNom',nom.value);localStorage.setItem('vipApe',ape.value);}catch(e){}
+    }
+    nom.addEventListener('input',refresh); ape.addEventListener('input',refresh);
+
+    function openM(){modal.classList.add('open');modal.setAttribute('aria-hidden','false');setTimeout(()=>nom.focus(),60);}
+    function closeM(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');}
+    document.getElementById('vipOpen').onclick=openM;
+    document.getElementById('vipClose').onclick=closeM;
+    modal.addEventListener('click',e=>{if(e.target===modal)closeM();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeM();});
+
+    // prefill: ?to= o último usado
+    try{
+      const p=new URLSearchParams(location.search);
+      nom.value=p.get('to')||localStorage.getItem('vipNom')||'';
+      ape.value=(p.get('to')?'':localStorage.getItem('vipApe'))||'';
+    }catch(e){}
+    refresh();
+
+    // ---- render del ticket en canvas (sin librerías) ----
+    async function draw(){
+      const c=canvas.getContext('2d'),W=1000,H=430,stubW=190;
+      const P='#efe9da',P2='#e7e0cf',INK='#1a1714',GRN='#2c6f24',RED='#b8402f';
+      try{await Promise.all([
+        document.fonts.load("400 60px 'Permanent Marker'"),
+        document.fonts.load("700 24px 'Caveat'"),
+        document.fonts.load("700 18px 'Oswald'")
+      ]);}catch(e){}
+      c.clearRect(0,0,W,H);
+      c.fillStyle=P;c.fillRect(0,0,W,H);
+      c.fillStyle=P2;c.fillRect(W-stubW,0,stubW,H);
+      c.strokeStyle=INK;c.lineWidth=8;c.strokeRect(4,4,W-8,H-8);
+      c.save();c.setLineDash([12,10]);c.lineWidth=5;c.beginPath();c.moveTo(W-stubW,8);c.lineTo(W-stubW,H-8);c.stroke();c.restore();
+
+      const x=46;c.textAlign='left';c.textBaseline='alphabetic';
+      c.fillStyle=GRN;c.font="700 30px 'Caveat'";c.fillText('cumple de GIANNI 🦁 · alias León',x,62);
+      const fn=(fullName()||'TU NOMBRE').toUpperCase();
+      let fs=86;const maxW=W-stubW-x-26;c.font="400 "+fs+"px 'Permanent Marker'";
+      while(c.measureText(fn).width>maxW&&fs>32){fs-=2;c.font="400 "+fs+"px 'Permanent Marker'";}
+      c.fillStyle=INK;const ny=70+fs*0.78;c.fillText(fn,x,ny);
+      c.fillStyle=GRN;c.font="700 18px 'Oswald'";c.fillText('ADMITE 1 · ACCESO TOTAL A LA JODA',x,ny+30);
+      let my=ny+78,mx=x;[['FECHA','20/06'],['HORA','19 HS'],['LUGAR','GERLI']].forEach(([k,v])=>{
+        c.fillStyle=GRN;c.font="700 15px 'Oswald'";c.fillText(k,mx,my-20);
+        c.fillStyle=INK;c.font="400 30px 'Permanent Marker'";c.fillText(v,mx,my+10);
+        mx+=Math.max(150,c.measureText(v).width+72);
+      });
+      const by=my+40,bw=W-stubW-x-26;c.fillStyle=INK;let bx=x;
+      while(bx<x+bw){const w=2+((bx*7)%4);c.fillRect(bx,by,w,42);bx+=w+2+((bx*5)%4);}
+
+      // stub: león (mismo encuadre que el CSS: 185% / -34% / -70%)
+      const cxs=W-stubW/2,lcy=72,lr=44;
+      c.save();c.beginPath();c.arc(cxs,lcy,lr,0,Math.PI*2);c.closePath();c.clip();
+      if(lion.complete&&lion.naturalWidth){
+        const iw=1.85*(2*lr),ih=iw*(lion.naturalHeight/lion.naturalWidth);
+        c.drawImage(lion,(cxs-lr)-0.34*(2*lr),(lcy-lr)-0.70*(2*lr),iw,ih);
+      }else{c.fillStyle=P;c.fillRect(cxs-lr,lcy-lr,2*lr,2*lr);}
+      c.restore();c.lineWidth=4;c.strokeStyle=INK;c.beginPath();c.arc(cxs,lcy,lr,0,Math.PI*2);c.stroke();
+      c.save();c.translate(cxs,H/2+6);c.rotate(-Math.PI/2);c.fillStyle=GRN;c.font="700 16px 'Oswald'";c.textAlign='center';c.fillText('E N T R A D A',0,0);c.restore();
+      c.fillStyle=RED;c.font="400 54px 'Permanent Marker'";c.textAlign='center';c.fillText(num.textContent,cxs,H-32);c.textAlign='left';
+      return canvas;
+    }
+    const toBlob=()=>new Promise(r=>canvas.toBlob(r,'image/png'));
+    const shareText=()=>'🦁 Tengo mi ENTRADA pal CUMPLE DE GIANNI — 20/06 · 19hs · Gerli. ¡Sumate, va a ser épica!';
+
+    async function download(){
+      await draw();const b=await toBlob();const a=document.createElement('a');
+      a.href=URL.createObjectURL(b);a.download='entrada-gianni-'+((fullName()||'vip').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''))+'.png';
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+    }
+    async function share(){
+      const text=shareText(),url=location.href;
+      await draw();const b=await toBlob();const file=new File([b],'entrada-gianni.png',{type:'image/png'});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){
+        try{await navigator.share({files:[file],text,title:'Entrada Cumple Gianni 🦁'});return;}catch(e){if(e.name==='AbortError')return;}
+      }
+      window.open('https://wa.me/?text='+encodeURIComponent(text+' '+url),'_blank');
+    }
+    const dl=document.getElementById('vipDownload'),sh=document.getElementById('vipShare');
+    dl.onclick=download; sh.onclick=share;
+    [dl,sh].forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}}));
+  })();
 </script>
 </body>
 </html>
