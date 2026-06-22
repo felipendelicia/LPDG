@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>CUMPLE DE GIANNI · Cuenta Regresiva</title>
+<meta name="description" content="Cuenta regresiva pal cumple de Gianni (alias León) en Gerli, Lanús. Whisky, fernet, locro, humo y mucha joda." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="CUMPLE DE GIANNI 🦁 — alias León" />
+<meta property="og:description" content="Faltan días pa' la joda. Gerli, Lanús · 20/06 19hs. ¡Va a ser una noche épica!" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="../photos/leon.jpeg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Caveat:wght@500;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --paper:#efe9da;--paper-2:#e7e0cf;--ink:#1a1714;
+    --green:#3f8f33;--green-d:#2c6f24;--gold:#e6ad22;--gold-d:#caa31f;--red:#b8402f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:100%;min-height:100%}
+  body{
+    font-family:'Oswald',sans-serif;color:var(--ink);background:var(--paper);
+    -webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden;cursor:crosshair;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(120% 100% at 50% 40%, transparent 60%, rgba(120,95,40,.12) 100%);
+  }
+
+  .smoke{position:fixed;bottom:-12vmin;z-index:0;pointer-events:none;width:30vmin;height:30vmin;border-radius:50%;
+    background:radial-gradient(circle, rgba(90,80,60,.10), transparent 65%);filter:blur(10px);opacity:0;animation:rise linear infinite}
+  .smoke.s1{left:10%;animation-duration:19s}.smoke.s2{left:46%;animation-duration:24s;animation-delay:7s}.smoke.s3{left:78%;animation-duration:21s;animation-delay:3s}
+  @keyframes rise{0%{transform:translateY(0) scale(.8);opacity:0}15%{opacity:.8}100%{transform:translateY(-115vh) scale(1.5);opacity:0}}
+
+  .sheet{position:relative;z-index:1;max-width:600px;margin:0 auto;
+    padding:clamp(1.2rem,5vw,2.4rem) clamp(1rem,4vw,1.8rem) 5.5rem;
+    display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(.8rem,2.4vw,1.3rem)}
+
+  .doodle{position:absolute;font-family:'Permanent Marker',cursive;pointer-events:none;color:var(--green);opacity:.85;z-index:1}
+  .dk{color:var(--ink)}.dy{color:var(--gold)}
+  .d1{top:7%;left:6%;font-size:1.6rem;transform:rotate(-18deg)}.d2{top:4%;right:9%;font-size:1.3rem}
+  .d3{top:30%;left:3%;font-size:1.2rem;transform:rotate(12deg)}.d4{top:46%;right:4%;font-size:1.5rem}
+  .d5{bottom:16%;left:5%;font-size:1.4rem;transform:rotate(-10deg)}.d6{bottom:9%;right:8%;font-size:1.2rem}
+
+  .eyebrow{font-family:'Caveat',cursive;font-weight:700;font-size:clamp(1.3rem,5vw,2rem);color:var(--green-d);transform:rotate(-3deg);line-height:1;animation:fade .7s ease .2s both}
+
+  .title-wrap{display:flex;flex-direction:column;align-items:center;gap:.18em;margin-top:.1rem}
+  .t-small{font-family:'Permanent Marker',cursive;font-size:clamp(1.5rem,7vw,2.7rem);letter-spacing:.06em;transform:rotate(-2deg);color:var(--ink);line-height:1;animation:fade .7s ease .3s both}
+  .t-name{position:relative;display:inline-block;font-family:'Permanent Marker',cursive;font-size:clamp(3.2rem,16vw,7rem);line-height:.9;padding-top:.42em;transform:rotate(-1.5deg);text-shadow:2px 3px 0 rgba(0,0,0,.12);animation:sprayOn .9s ease .35s both}
+  .crown{position:absolute;top:-.05em;left:50%;transform:translateX(-50%) rotate(-7deg);font-size:.4em;color:var(--gold);text-shadow:0 2px 0 var(--gold-d)}
+  .apodo{font-family:'Caveat',cursive;font-weight:700;color:var(--green-d);font-size:clamp(1.05rem,4vw,1.5rem);transform:rotate(-2deg);margin-top:-.1rem;animation:fade .7s ease .5s both}
+  .apodo b{color:var(--ink)}
+  @keyframes sprayOn{0%{opacity:0;filter:blur(14px);transform:rotate(-1.5deg) scale(1.08)}60%{opacity:1;filter:blur(0)}}
+  @keyframes fade{0%{opacity:0;transform:translateY(10px)}}
+
+  .scribble{width:min(78%,360px);height:18px;margin-top:.1rem;animation:fade .6s ease .7s both}
+  .scribble path{fill:none;stroke:var(--green);stroke-width:6;stroke-linecap:round}
+
+  .lion{position:relative;width:clamp(190px,52vw,300px);aspect-ratio:1;margin:.2rem 0 .1rem;animation:pop .6s cubic-bezier(.2,1.5,.4,1) .6s both}
+  .lion-frame{position:absolute;inset:0;border-radius:50%;overflow:hidden;cursor:pointer;
+    box-shadow:0 0 0 5px var(--ink),0 0 0 9px var(--paper),0 0 0 12px var(--green),10px 12px 0 rgba(0,0,0,.18);background:var(--paper-2);transition:transform .2s}
+  .lion-frame:hover{transform:rotate(-2deg) scale(1.02)}
+  .lion-frame.shake{animation:shake .5s}
+  @keyframes shake{0%,100%{transform:rotate(0)}20%{transform:rotate(-4deg)}40%{transform:rotate(4deg)}60%{transform:rotate(-3deg)}80%{transform:rotate(3deg)}}
+  .lion-frame img{position:absolute;width:185%;left:-34%;top:-70%;filter:contrast(1.04) saturate(1.05)}
+  .lion .spark{position:absolute;font-family:'Permanent Marker',cursive;color:var(--ink);font-size:1.4rem;pointer-events:none}
+  .lion .sp1{top:-6%;left:6%;transform:rotate(-20deg);color:var(--gold)}
+  .lion .sp2{top:0;right:0;transform:rotate(15deg);color:var(--green)}
+  @keyframes pop{0%{opacity:0;transform:translateY(24px) scale(.85)}}
+
+  .polaroid{position:absolute;bottom:-4%;right:-13%;width:clamp(86px,24vw,130px);background:#fbfbf7;padding:6px 6px 4px;
+    border:1px solid rgba(0,0,0,.12);box-shadow:4px 6px 0 rgba(0,0,0,.22);transform:rotate(8deg);z-index:4;animation:drop .7s cubic-bezier(.2,1.4,.4,1) 1s both}
+  .polaroid::before{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%) rotate(-6deg);width:40px;height:15px;background:rgba(230,173,34,.6);border:1px dashed rgba(0,0,0,.25)}
+  .pol-img{position:relative;width:100%;aspect-ratio:1;overflow:hidden;background:#222}
+  .pol-img img{position:absolute;width:115%;left:-13%;top:-34%;filter:contrast(1.05)}
+  .pol-cap{display:block;font-family:'Caveat',cursive;font-weight:700;color:var(--ink);font-size:clamp(.8rem,3vw,1.05rem);text-align:center;line-height:1.05;margin-top:3px}
+  @keyframes drop{0%{opacity:0;transform:translateY(-30px) rotate(0) scale(.6)}}
+
+  .clock-cap{font-family:'Caveat',cursive;font-weight:700;font-size:clamp(1.2rem,4.5vw,1.7rem);color:var(--green-d);transform:rotate(-2deg)}
+  .clock{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(.45rem,2vw,.8rem);width:100%}
+  .cell{position:relative;min-width:clamp(62px,17vw,108px);background:var(--paper);border:3px solid var(--ink);border-radius:14px;
+    padding:.5rem .35rem .4rem;box-shadow:5px 6px 0 rgba(0,0,0,.16);animation:pop .55s cubic-bezier(.2,1.5,.4,1) both}
+  .cell:nth-child(1){animation-delay:.9s}.cell:nth-child(2){animation-delay:1s}.cell:nth-child(3){animation-delay:1.1s}.cell:nth-child(4){animation-delay:1.2s}.cell:nth-child(5){animation-delay:1.3s}
+  .cell:nth-child(odd){transform:rotate(-2deg)}.cell:nth-child(even){transform:rotate(2deg)}
+  .cell::before{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-4deg);width:42px;height:16px;background:rgba(230,173,34,.55);border:1px dashed rgba(0,0,0,.25)}
+  .num{font-family:'Permanent Marker',cursive;font-size:clamp(1.8rem,7vw,3.2rem);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;transition:transform .12s}
+  .num.tick{transform:scale(1.14)}
+  .cell:nth-child(1) .num,.cell:nth-child(3) .num{color:var(--green-d)}
+  .cell:nth-child(5) .num{color:var(--gold-d)}
+  .lbl{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(.5rem,1.7vw,.72rem);letter-spacing:.22em;text-transform:uppercase;color:var(--green-d);margin-top:.25rem}
+  .cell--ms{min-width:clamp(62px,15vw,92px)}.cell--ms .num{font-size:clamp(1.4rem,5.5vw,2.4rem)}
+
+  .banner{position:relative;background:var(--gold);color:var(--ink);font-family:'Permanent Marker',cursive;font-size:clamp(1.1rem,4.6vw,1.8rem);
+    padding:.5em 1.4em;letter-spacing:.02em;transform:rotate(-1deg);box-shadow:4px 5px 0 rgba(0,0,0,.18);border:3px solid var(--ink)}
+  .banner::before,.banner::after{content:"";position:absolute;top:50%;width:0;height:0;border:14px solid transparent}
+  .banner::before{left:-22px;border-right-color:var(--gold);transform:translateY(-50%)}
+  .banner::after{right:-22px;border-left-color:var(--gold);transform:translateY(-50%)}
+
+  .notes{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(.6rem,3vw,1.2rem);width:100%}
+  .note{background:var(--paper);border:2.5px solid var(--ink);border-radius:6px;padding:.7rem 1rem;text-align:left;box-shadow:4px 5px 0 rgba(0,0,0,.14);position:relative}
+  .note::before{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(5deg);width:50px;height:18px;background:rgba(63,143,51,.4);border:1px dashed rgba(0,0,0,.25)}
+  .note h4{font-family:'Caveat',cursive;font-weight:700;color:var(--green-d);font-size:clamp(1rem,3.6vw,1.3rem);margin-bottom:.2rem}
+  .note .row{font-family:'Permanent Marker',cursive;font-size:clamp(.95rem,3.6vw,1.25rem);line-height:1.5}
+  .note .row .k{color:var(--green-d);font-family:'Oswald';font-weight:700;font-size:.7em;letter-spacing:.1em;display:block;text-transform:uppercase}
+  .crew-note .item{font-family:'Permanent Marker',cursive;font-size:clamp(.95rem,3.6vw,1.25rem);line-height:1.55}
+  .crew-note .dot{color:var(--green);margin-right:.3em}.crew-note .host{color:var(--green-d)}
+  .crew-note .q{color:var(--red)}
+
+  .items{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:clamp(.8rem,4vw,1.6rem);margin-top:.3rem}
+  .item-x{display:flex;flex-direction:column;align-items:center;gap:.25rem;width:clamp(72px,20vw,112px)}
+  .item-x .ic{width:clamp(2.6rem,10vw,3.6rem);height:auto;display:block;filter:drop-shadow(2px 3px 0 rgba(0,0,0,.12));transition:transform .2s}
+  .item-x:hover .ic{transform:translateY(-4px) rotate(-4deg)}
+  .item-x .nm{font-family:'Permanent Marker',cursive;font-size:clamp(.8rem,3.2vw,1.05rem);color:var(--ink);line-height:1.05}
+  .item-x:nth-child(2) .nm,.item-x:nth-child(4) .nm{color:var(--green-d)}
+
+  .bubble{position:relative;background:var(--paper);border:3px solid var(--ink);border-radius:40px;padding:.8em 1.5em;font-family:'Permanent Marker',cursive;font-size:clamp(1.2rem,5vw,2rem);box-shadow:4px 5px 0 rgba(0,0,0,.16);transform:rotate(-1deg);margin-top:.4rem}
+  .esper{font-family:'Caveat',cursive;font-weight:700;color:var(--red);font-size:clamp(1.3rem,5vw,1.9rem);transform:rotate(-3deg)}
+
+  .share{display:inline-flex;align-items:center;gap:.45em;margin-top:.3rem;cursor:pointer;
+    background:var(--green);color:#fff;font-family:'Permanent Marker',cursive;font-size:clamp(1.05rem,4.4vw,1.5rem);
+    border:3px solid var(--ink);border-radius:44px;padding:.5em 1.3em;box-shadow:4px 5px 0 rgba(0,0,0,.22);
+    transform:rotate(-1.5deg);transition:transform .15s}
+  .share:hover{transform:rotate(0) translateY(-2px)}
+  .share:active{transform:translateY(1px)}
+  .share svg{width:1.15em;height:1.15em;fill:#fff;flex:none}
+
+  .mute{position:fixed;top:14px;right:14px;z-index:20;width:54px;height:54px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--ink);box-shadow:3px 4px 0 rgba(0,0,0,.2);
+    font-size:1.4rem;cursor:pointer;transform:rotate(-6deg);display:grid;place-items:center;transition:transform .15s}
+  .mute:hover{transform:rotate(0) scale(1.05)}
+  .mute:not(.on){animation:nudge 1.6s ease-in-out infinite}
+  .mute.on{background:var(--green);color:var(--paper)}
+  @keyframes nudge{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(-6deg) scale(1.1)}}
+  .mute-hint{position:fixed;top:20px;right:74px;z-index:20;font-family:'Caveat',cursive;font-weight:700;color:var(--green-d);font-size:1.1rem;transform:rotate(-3deg);pointer-events:none}
+
+  .marquee{position:fixed;bottom:0;left:0;width:100%;z-index:10;background:var(--ink);border-top:3px solid var(--green);overflow:hidden;white-space:nowrap;padding:.4rem 0}
+  .marquee__t{display:inline-block;white-space:nowrap;animation:scroll 20s linear infinite}
+  .marquee span{font-family:'Permanent Marker',cursive;font-size:clamp(.75rem,2.4vw,1.05rem);letter-spacing:.12em;color:var(--paper);padding:0 1rem}
+  .marquee span.hot{color:var(--gold)}.marquee span.grn{color:var(--green)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  .confetti{position:fixed;top:-5vh;font-size:1.5rem;z-index:30;pointer-events:none;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(112vh) rotate(680deg);opacity:.2}}
+
+  .toast{position:fixed;left:50%;bottom:70px;transform:translateX(-50%);z-index:40;background:var(--ink);color:var(--paper);
+    font-family:'Caveat',cursive;font-weight:700;font-size:1.1rem;padding:.5em 1.1em;border-radius:10px;box-shadow:3px 4px 0 rgba(0,0,0,.3);opacity:0;transition:opacity .3s;pointer-events:none}
+  .toast.show{opacity:1}
+
+  body.party .t-name{color:var(--red)}
+
+  /* ---- ENTRADA VIP (modal + ticket + acciones) ---- */
+  .ticket-cta{display:inline-flex;align-items:center;gap:.45em;margin-top:.1rem;cursor:pointer;
+    background:var(--gold);color:var(--ink);font-family:'Permanent Marker',cursive;font-size:clamp(1.05rem,4.4vw,1.5rem);
+    border:3px solid var(--ink);border-radius:44px;padding:.5em 1.3em;box-shadow:4px 5px 0 rgba(0,0,0,.22);
+    transform:rotate(1.2deg);transition:transform .15s}
+  .ticket-cta:hover{transform:rotate(0) translateY(-2px)}
+  .ticket-cta:active{transform:translateY(1px)}
+
+  .modal{position:fixed;inset:0;z-index:50;display:none;align-items:flex-start;justify-content:center;
+    background:rgba(10,8,6,.74);overflow-y:auto;padding:max(3vh,16px) 14px 40px;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+  .modal.open{display:flex}
+  .modal-card{position:relative;width:min(560px,100%);background:var(--paper);border:3px solid var(--ink);border-radius:14px;
+    box-shadow:8px 10px 0 rgba(0,0,0,.45);padding:clamp(1rem,4vw,1.6rem);animation:pop .4s cubic-bezier(.2,1.5,.4,1) both}
+  .modal-card h3{font-family:'Permanent Marker',cursive;font-size:clamp(1.3rem,5vw,1.9rem);text-align:center;color:var(--ink)}
+  .modal-sub{text-align:center;font-family:'Caveat',cursive;font-weight:700;color:var(--green-d);font-size:1.1rem;margin:.1rem 0 1rem}
+  .modal-close{position:absolute;top:8px;right:10px;width:38px;height:38px;border-radius:50%;border:3px solid var(--ink);
+    background:var(--paper);font-size:1.1rem;cursor:pointer;display:grid;place-items:center;box-shadow:2px 3px 0 rgba(0,0,0,.2)}
+
+  .frm{display:flex;gap:.7rem;margin-bottom:1rem}
+  .frm .f{flex:1;min-width:0}
+  .frm label{display:block;font-family:'Oswald';font-weight:700;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--green-d);margin-bottom:.25rem}
+  .frm input{width:100%;background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:10px;padding:.5rem .7rem;
+    font-family:'Permanent Marker',cursive;font-size:1.1rem;outline:none}
+  .frm input:focus{border-color:var(--green)}
+
+  .tk{display:flex;border:3px solid var(--ink);border-radius:10px;box-shadow:5px 6px 0 rgba(0,0,0,.25);overflow:hidden;background:var(--paper)}
+  .tk-body{flex:1;padding:.9rem 1rem;min-width:0}
+  .tk-eyebrow{font-family:'Caveat',cursive;font-weight:700;color:var(--green-d);font-size:1rem;transform:rotate(-2deg)}
+  .tk-eyebrow b{color:var(--ink)}
+  .tk-who{font-family:'Permanent Marker',cursive;font-size:clamp(1.5rem,6.5vw,2.3rem);line-height:.95;margin:.12rem 0 .15rem;word-break:break-word;color:var(--ink)}
+  .tk-adm{font-family:'Oswald',sans-serif;font-weight:700;font-size:.6rem;letter-spacing:.16em;color:var(--green-d)}
+  .tk-meta{display:flex;gap:1rem;font-family:'Permanent Marker',cursive;font-size:.9rem;margin-top:.5rem}
+  .tk-meta .k{display:block;font-family:'Oswald',sans-serif;font-weight:700;font-size:.55rem;letter-spacing:.12em;color:var(--green-d)}
+  .tk-barcode{height:30px;margin-top:.6rem;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 9px)}
+  .tk-stub{width:90px;flex:none;border-left:3px dashed var(--ink);padding:.8rem .4rem;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;background:var(--paper-2)}
+  .tk-vert{writing-mode:vertical-rl;font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.2em;font-size:.58rem;color:var(--green-d)}
+  .tk-num{font-family:'Permanent Marker',cursive;font-size:1.3rem;color:var(--red)}
+  .tk-lion{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid var(--ink);position:relative;flex:none}
+  .tk-lion img{position:absolute;width:185%;left:-34%;top:-70%}
+
+  .acts{display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap;justify-content:center}
+  .acts .btn{display:inline-flex;align-items:center;gap:.4em;cursor:pointer;font-family:'Permanent Marker',cursive;font-size:1rem;
+    border:3px solid var(--ink);border-radius:40px;padding:.45em 1.1em;box-shadow:3px 4px 0 rgba(0,0,0,.3);transition:transform .15s}
+  .acts .btn:hover{transform:translateY(-2px)}
+  .acts .btn:active{transform:translateY(1px)}
+  .acts .wa{background:#25D366;color:#0a3d1c}
+  .acts .dl{background:var(--paper);color:var(--ink)}
+  .modal-note{text-align:center;font-family:'Caveat',cursive;font-weight:700;color:#6b6256;font-size:.95rem;margin-top:.7rem;line-height:1.3}
+
+  /* ---- ¿QUÉ PREFERÍS? ---- */
+  .qp-cta{background:var(--green);color:#fff;transform:rotate(-1.2deg)}
+  .qp-cta:hover{transform:rotate(0) translateY(-2px)}
+  .qp-arena{display:flex;flex-direction:column;gap:.5rem;margin:.5rem 0 .2rem}
+  .qp-opt{position:relative;width:100%;text-align:left;background:var(--paper);border:3px solid var(--ink);border-radius:12px;
+    padding:.85rem 1rem .85rem 3.1rem;font-family:'Permanent Marker',cursive;font-size:clamp(1rem,3.8vw,1.25rem);color:var(--ink);
+    cursor:pointer;box-shadow:4px 5px 0 rgba(0,0,0,.18);transition:transform .12s,background .15s,box-shadow .15s;line-height:1.18}
+  .qp-opt:hover{transform:translateY(-2px)}
+  .qp-opt:active{transform:translateY(1px)}
+  .qp-letter{position:absolute;left:.55rem;top:.7rem;width:1.9rem;height:1.9rem;border-radius:50%;
+    background:var(--gold);border:2px solid var(--ink);display:grid;place-items:center;font-size:1rem;color:var(--ink)}
+  .qp-b .qp-letter{background:var(--green);color:#fff}
+  .qp-res{display:block;font-family:'Oswald',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.05em;color:var(--green-d);margin-top:.3rem;opacity:0;transition:opacity .25s}
+  .qp-opt.picked{background:#fff7e0;box-shadow:4px 5px 0 var(--green),0 0 0 3px var(--gold) inset}
+  .qp-opt.picked .qp-res{opacity:1;color:var(--red);font-size:1.05rem}
+  .qp-opt.dim{opacity:.5}
+  .qp-opt.dim .qp-res{opacity:1}
+  .qp-opt.answered{cursor:default}
+  .qp-opt.answered:hover{transform:none}
+  .qp-or{align-self:center;font-family:'Permanent Marker',cursive;color:var(--green-d);font-size:1.05rem;transform:rotate(-6deg)}
+  .qp-verdict{min-height:1.4em;text-align:center;font-family:'Caveat',cursive;font-weight:700;color:var(--red);font-size:clamp(1.05rem,4vw,1.35rem);margin:.55rem 0 .1rem;opacity:0;transition:opacity .25s}
+  .qp-verdict.show{opacity:1}
+  .qp-votes{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin:.3rem 0 .1rem;opacity:0;transition:opacity .25s}
+  .qp-votes.show{opacity:1}
+  .qp-chip{display:inline-flex;align-items:center;gap:.3em;font-family:'Permanent Marker',cursive;font-size:.78rem;color:var(--ink);
+    border:2px solid var(--ink);border-radius:30px;padding:.18em .6em;background:var(--paper);box-shadow:2px 2px 0 rgba(0,0,0,.15)}
+  .qp-chip.agree{background:#eafbe5;border-color:var(--green-d)}
+  .qp-chip.dis{opacity:.55}
+  .qp-chip .vt{font-family:'Permanent Marker',cursive;color:var(--red);font-size:.95em}
+  .qp-chip.agree .vt{color:var(--green-d)}
+  .qp-foot{display:flex;flex-direction:column;gap:.55rem;align-items:center;margin-top:.5rem}
+  .qp-count{font-family:'Oswald',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--green-d)}
+  .qp-acts{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+  .qp-acts .btn{display:inline-flex;align-items:center;gap:.4em;cursor:pointer;font-family:'Permanent Marker',cursive;font-size:1rem;
+    border:3px solid var(--ink);border-radius:40px;padding:.45em 1.1em;box-shadow:3px 4px 0 rgba(0,0,0,.3);transition:transform .15s}
+  .qp-acts .btn:hover{transform:translateY(-2px)}
+  .qp-acts .btn:active{transform:translateY(1px)}
+  .qp-acts .wa{background:#25D366;color:#0a3d1c}
+  .qp-acts .dl{background:var(--paper);color:var(--ink)}
+
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+
+  /* ---- READ ONLY (portada archivada) ---- */
+  body{padding-top:48px}
+  .ro-bar{position:fixed;top:0;left:0;width:100%;z-index:60;display:flex;align-items:center;gap:.7rem;
+    padding:.5rem clamp(.7rem,3vw,1.2rem);background:#15120f;border-bottom:2px solid var(--gold);
+    font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;box-shadow:0 2px 0 rgba(0,0,0,.32)}
+  .ro-back{flex:none;width:30px;height:30px;display:grid;place-items:center;border:1.5px solid rgba(239,233,218,.32);
+    border-radius:6px;color:var(--paper);text-decoration:none;font-size:1.05rem;line-height:1;
+    transition:border-color .2s,color .2s,transform .12s}
+  .ro-back:hover{border-color:var(--gold);color:var(--gold)}
+  .ro-back:active{transform:translateY(1px)}
+  .ro-tag{display:inline-flex;align-items:center;gap:.55em;color:#15120f;background:var(--gold);
+    font-size:.64rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;padding:.34em .75em;border-radius:4px;white-space:nowrap}
+  .ro-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:#15120f;animation:roPip 2.4s ease-out infinite}
+  @keyframes roPip{0%{box-shadow:0 0 0 0 rgba(21,18,15,.5)}70%{box-shadow:0 0 0 7px rgba(21,18,15,0)}100%{box-shadow:0 0 0 0 rgba(21,18,15,0)}}
+  .ro-meta{color:rgba(239,233,218,.58);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ro-lock{margin-left:auto;flex:none;color:rgba(239,233,218,.5);font-size:.8rem}
+  @media (max-width:430px){.ro-meta{display:none}}
+</style>
+</head>
+<body>
+  <div class="ro-bar">
+    <a class="ro-back" href="../archivo.html" aria-label="Volver al archivo">←</a>
+    <span class="ro-tag">read only</span>
+    <span class="ro-meta">portada archivada · cumple de gianni</span>
+    <span class="ro-lock" aria-hidden="true">🔒</span>
+  </div>
+
+  <div class="smoke s1"></div><div class="smoke s2"></div><div class="smoke s3"></div>
+
+  <span class="doodle d1">✦</span><span class="doodle d2 dy">★</span><span class="doodle d3 dk">//</span>
+  <span class="doodle d4 dy">✶</span><span class="doodle d5">♥</span><span class="doodle d6 dk">✦</span>
+
+  <main class="sheet">
+    <p class="eyebrow">faltan pa' la joda...</p>
+
+    <div class="title-wrap">
+      <span class="t-small">CUMPLE DE</span>
+      <span class="t-name"><span class="crown">♛</span>GIANNI</span>
+    </div>
+    <p class="apodo">alias <b>León</b> 🦁</p>
+    <svg class="scribble" viewBox="0 0 360 18" preserveAspectRatio="none"><path d="M4 11 C 60 3, 120 16, 180 9 S 300 4, 356 10"/></svg>
+
+    <div class="lion">
+      <div class="lion-frame" id="lionFrame" title="tocá al león"><img src="../photos/leon.jpeg" alt="León" /></div>
+      <span class="spark sp1">✦</span>
+      <span class="spark sp2">✶</span>
+      <div class="polaroid">
+        <div class="pol-img"><img src="../photos/IMG-20250614-WA0026.jpg" alt="Gianni" /></div>
+        <span class="pol-cap">el capo 🎩</span>
+      </div>
+    </div>
+
+    <p class="clock-cap">¿cuánto falta?</p>
+    <div class="clock" id="clock">
+      <div class="cell"><div class="num" id="d">00</div><div class="lbl">Días</div></div>
+      <div class="cell"><div class="num" id="h">00</div><div class="lbl">Horas</div></div>
+      <div class="cell"><div class="num" id="m">00</div><div class="lbl">Min</div></div>
+      <div class="cell"><div class="num" id="s">00</div><div class="lbl">Seg</div></div>
+      <div class="cell cell--ms"><div class="num" id="ms">000</div><div class="lbl">Ms</div></div>
+    </div>
+
+    <div class="banner">¡VA A SER UNA NOCHE ÉPICA!</div>
+
+    <div class="notes">
+      <div class="note">
+        <h4>cuándo &amp; dónde</h4>
+        <div class="row"><span class="k">Fecha</span>20/06</div>
+        <div class="row"><span class="k">Hora</span>19 HS</div>
+        <div class="row"><span class="k">Lugar</span>GERLI</div>
+      </div>
+      <div class="note crew-note">
+        <h4>vamos a estar</h4>
+        <div class="item"><span class="dot">●</span>FELIPE</div>
+        <div class="item"><span class="dot">●</span>LUCA</div>
+        <div class="item"><span class="dot">●</span>MATÍAS</div>
+        <div class="item"><span class="dot">●</span>ALEJO</div>
+        <div class="item"><span class="dot">●</span>y <span class="host">GIANNI</span>, <span class="q">¿VENDRÁ?</span></div>
+      </div>
+    </div>
+
+    <div class="items">
+      <div class="item-x">
+        <svg class="ic" viewBox="0 0 70 72" aria-hidden="true">
+          <rect x="13" y="2" width="9" height="5" rx="1.5" fill="#1a1714"/>
+          <path d="M14 7 h7 v5 q5 2 5 9 v38 q0 4 -4 4 H13 q-4 0 -4 -4 V21 q0 -7 5 -9 z" fill="#c2872f" stroke="#1a1714" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="6.5" y="33" width="22" height="14" fill="#f3ecdb" stroke="#1a1714" stroke-width="2.5"/>
+          <line x1="6.5" y1="40" x2="28.5" y2="40" stroke="#1a1714" stroke-width="2"/>
+          <path d="M40 42 h20 l-2.5 24 q-.5 3.5 -7.5 3.5 t-7.5 -3.5 z" fill="#ffffff" fill-opacity=".18" stroke="#1a1714" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M41.5 56 h17 l-1.3 10 q-.4 3.5 -7.2 3.5 t-7.2 -3.5 z" fill="#c2872f"/>
+        </svg>
+        <span class="nm">WHISKY</span>
+      </div>
+      <div class="item-x">
+        <svg class="ic" viewBox="0 0 70 72" aria-hidden="true">
+          <g transform="translate(35,42)" stroke="#2c6f24" stroke-width="2" stroke-linejoin="round">
+            <ellipse cx="0" cy="-23" rx="3.6" ry="23" fill="#3f8f33"/>
+            <ellipse cx="0" cy="-19" rx="3.4" ry="19" fill="#3f8f33" transform="rotate(34)"/>
+            <ellipse cx="0" cy="-19" rx="3.4" ry="19" fill="#3f8f33" transform="rotate(-34)"/>
+            <ellipse cx="0" cy="-14" rx="3" ry="14" fill="#4aa53c" transform="rotate(68)"/>
+            <ellipse cx="0" cy="-14" rx="3" ry="14" fill="#4aa53c" transform="rotate(-68)"/>
+            <ellipse cx="0" cy="-9" rx="2.6" ry="9" fill="#4aa53c" transform="rotate(104)"/>
+            <ellipse cx="0" cy="-9" rx="2.6" ry="9" fill="#4aa53c" transform="rotate(-104)"/>
+          </g>
+          <line x1="35" y1="42" x2="35" y2="65" stroke="#2c6f24" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="nm">MUCHA MARÍA</span>
+      </div>
+      <div class="item-x">
+        <svg class="ic" viewBox="0 0 70 72" aria-hidden="true">
+          <rect x="14" y="2" width="9" height="5" rx="1.5" fill="#1a1714"/>
+          <path d="M15 7 h7 v5 q5 2 5 9 v38 q0 4 -4 4 H14 q-4 0 -4 -4 V21 q0 -7 5 -9 z" fill="#241712" stroke="#1a1714" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="8" y="32" width="21" height="16" fill="#f3ecdb" stroke="#1a1714" stroke-width="2.5"/>
+          <text x="18.5" y="45" font-family="'Permanent Marker',cursive" font-size="14" text-anchor="middle" fill="#2c6f24">F</text>
+          <path d="M40 42 h20 l-2.5 24 q-.5 3.5 -7.5 3.5 t-7.5 -3.5 z" fill="#ffffff" fill-opacity=".18" stroke="#1a1714" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M41.2 50 h17.6 l-1.7 16 q-.5 3.5 -7.1 3.5 t-7.1 -3.5 z" fill="#241712"/>
+        </svg>
+        <span class="nm">FERNET</span>
+      </div>
+      <div class="item-x">
+        <svg class="ic" viewBox="0 0 70 72" aria-hidden="true">
+          <path d="M24 16 q5 -6 0 -12" fill="none" stroke="#2c6f24" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M35 14 q5 -6 0 -12" fill="none" stroke="#2c6f24" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M46 16 q5 -6 0 -12" fill="none" stroke="#2c6f24" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M9 40 q-5 5 0 10" fill="none" stroke="#1a1714" stroke-width="3.5"/>
+          <path d="M61 40 q5 5 0 10" fill="none" stroke="#1a1714" stroke-width="3.5"/>
+          <path d="M11 34 h48 l-4 30 q-.5 4 -5 4 h-30 q-4.5 0 -5 -4 z" fill="#7a746c" stroke="#1a1714" stroke-width="3" stroke-linejoin="round"/>
+          <ellipse cx="35" cy="34" rx="25" ry="7" fill="#c2872f" stroke="#1a1714" stroke-width="3"/>
+          <circle cx="28" cy="33" r="2.4" fill="#e6ad22"/><circle cx="40" cy="35" r="2.4" fill="#e6ad22"/>
+          <circle cx="45" cy="32" r="2" fill="#3f8f33"/><circle cx="31" cy="36" r="1.8" fill="#3f8f33"/>
+        </svg>
+        <span class="nm">LOCRO</span>
+      </div>
+    </div>
+
+    <div class="bubble">¿QUIÉNES VAN?</div>
+    <p class="esper">¡los esperamos! ↯</p>
+
+    <button class="share" id="shareBtn">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11 19.9L3 29l6.3-1.9A13 13 0 1 0 16 3zm0 2.4a10.6 10.6 0 1 1-5.6 19.6l-.4-.2-3.7 1.1 1.1-3.6-.3-.4A10.6 10.6 0 0 1 16 5.4zm-3.6 4.8c-.3 0-.7.1-1 .4-.4.4-1.3 1.3-1.3 3.1s1.4 3.6 1.5 3.9c.2.3 2.6 4.1 6.4 5.6 3.1 1.2 3.8 1 4.5.9.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5s-2.2-1.1-2.5-1.2c-.3-.1-.6-.2-.8.2-.2.3-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.2-.4.4-.6.1-.3.1-.5 0-.7l-1-2.5c-.3-.6-.5-.5-.8-.5h-.5z"/></svg>
+      PASÁ LA VOZ
+    </button>
+
+    <button class="ticket-cta" id="vipOpen">🎫 GENERÁ TU ENTRADA</button>
+    <button class="ticket-cta qp-cta" id="qpOpen">🤔 ¿QUÉ PREFERÍS?</button>
+  </main>
+
+  <div class="toast" id="toast">link copiado 📋</div>
+
+  <div class="marquee"><div class="marquee__t" id="track">
+    <span class="hot">RAP</span><span>✶</span><span>ROCK</span><span>✶</span><span class="grn">CUMBIA</span><span>✶</span><span>BIRRA</span><span>✶</span><span class="grn">HUMO</span><span>✶</span><span class="hot">EL BARRIO</span><span>✶</span>
+  </div></div>
+
+  <!-- ENTRADA VIP -->
+  <div class="modal" id="vipModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-label="Generá tu entrada">
+      <button class="modal-close" id="vipClose" aria-label="Cerrar">✕</button>
+      <h3>Tu entrada VIP 🎫</h3>
+      <p class="modal-sub">Poné tu nombre y sumate a la lista</p>
+      <div class="frm">
+        <div class="f"><label for="vipNom">Nombre</label><input id="vipNom" type="text" maxlength="18" placeholder="Luca" autocomplete="given-name" /></div>
+        <div class="f"><label for="vipApe">Apellido</label><input id="vipApe" type="text" maxlength="20" placeholder="Pérez" autocomplete="family-name" /></div>
+      </div>
+      <div class="tk" id="vipTk">
+        <div class="tk-body">
+          <div class="tk-eyebrow">cumple de <b>GIANNI</b> 🦁 · alias León</div>
+          <div class="tk-who" id="vipWho">TU NOMBRE</div>
+          <div class="tk-adm">ADMITE 1 · ACCESO TOTAL A LA JODA</div>
+          <div class="tk-meta">
+            <div><span class="k">FECHA</span>20/06</div>
+            <div><span class="k">HORA</span>19 HS</div>
+            <div><span class="k">LUGAR</span>GERLI</div>
+          </div>
+          <div class="tk-barcode"></div>
+        </div>
+        <div class="tk-stub">
+          <div class="tk-lion"><img src="../photos/leon.jpeg" alt="" /></div>
+          <div class="tk-vert">ENTRADA</div>
+          <div class="tk-num" id="vipNum">000</div>
+        </div>
+      </div>
+      <div class="acts">
+        <span class="btn wa" id="vipShare" role="button" tabindex="0">📲 Compartir por WhatsApp</span>
+        <span class="btn dl" id="vipDownload" role="button" tabindex="0">⬇ Descargar PNG</span>
+      </div>
+      <p class="modal-note">En el celu comparte la <b>imagen</b> directo a WhatsApp. En la compu abre WhatsApp con texto + link (bajá el PNG para adjuntar).</p>
+    </div>
+  </div>
+  <!-- ¿QUÉ PREFERÍS? -->
+  <div class="modal" id="qpModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-label="¿Qué preferís?">
+      <button class="modal-close" id="qpClose" aria-label="Cerrar">✕</button>
+      <h3>¿Qué preferís? 🤔</h3>
+      <p class="modal-sub" id="qpSub">Tocá la que banques 👇</p>
+      <div class="qp-arena">
+        <button class="qp-opt qp-a" id="qpOptA"><span class="qp-letter">A</span><span class="qp-txt" id="qpTxtA">—</span><span class="qp-res" id="qpResA"></span></button>
+        <div class="qp-or">ó</div>
+        <button class="qp-opt qp-b" id="qpOptB"><span class="qp-letter">B</span><span class="qp-txt" id="qpTxtB">—</span><span class="qp-res" id="qpResB"></span></button>
+      </div>
+      <div class="qp-votes" id="qpVotes"></div>
+      <p class="qp-verdict" id="qpVerdict"></p>
+      <div class="qp-foot">
+        <span class="qp-count" id="qpCount">jugadas: 0</span>
+        <div class="qp-acts">
+          <button class="btn dl" id="qpNext">otra 🎲</button>
+          <button class="btn wa" id="qpShare">📲 picar al grupo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="vipCanvas" width="1000" height="430" style="display:none"></canvas>
+
+<script>
+  // ---- countdown ----
+  const TARGET=new Date('2026-06-20T19:00:00-03:00').getTime();
+  const el={d:d,h:h,m:m,s:s,ms:ms};
+  const pad=(n,w=2)=>String(n).padStart(w,'0');
+  function set(node,v,w){const x=pad(v,w);if(node.textContent!==x){node.textContent=x;node.classList.add('tick');setTimeout(()=>node.classList.remove('tick'),120);}}
+  let fin=false;
+  function tick(){
+    const diff=TARGET-Date.now();
+    if(diff<=0){if(!fin)party();return;}
+    const sec=Math.floor(diff/1000);
+    set(el.d,Math.floor(sec/86400));set(el.h,Math.floor(sec%86400/3600));
+    set(el.m,Math.floor(sec%3600/60));set(el.s,sec%60);
+    el.ms.textContent=pad(diff%1000,3);
+    requestAnimationFrame(tick);
+  }
+  function party(){
+    fin=true;document.body.classList.add('party');
+    document.querySelector('.eyebrow').textContent='¡ARRANCÓ LA JODA! 🔥';
+    const e=['🦁','🍺','💨','🔥','🎉','🍷'];
+    for(let i=0;i<60;i++){const c=document.createElement('div');c.className='confetti';c.textContent=e[i%e.length];
+      c.style.left=Math.random()*100+'vw';c.style.animationDuration=(2.5+Math.random()*3)+'s';c.style.animationDelay=Math.random()*2+'s';document.body.appendChild(c);}
+  }
+  tick();
+
+  // ---- marquee loop ----
+  track.innerHTML+=track.innerHTML;
+
+  // ---- (audio removido — portada read only) ----
+
+  // ---- easter egg: tocá al león ----
+  const lf=document.getElementById('lionFrame');
+  lf.onclick=()=>{lf.classList.remove('shake');void lf.offsetWidth;lf.classList.add('shake');
+    const e=['💨','🦁','🔥'];for(let i=0;i<10;i++){const c=document.createElement('div');c.className='confetti';c.textContent=e[i%e.length];
+      c.style.left=(40+Math.random()*20)+'vw';c.style.top='40vh';c.style.animationDuration=(1.5+Math.random()*1.5)+'s';document.body.appendChild(c);setTimeout(()=>c.remove(),3000);}};
+
+  // ---- share (WhatsApp) ----
+  const shareBtn=document.getElementById('shareBtn'),toast=document.getElementById('toast');
+  function faltaTxt(){
+    const diff=TARGET-Date.now();
+    if(diff<=0) return '¡YA ARRANCÓ, corré! 🔥';
+    const sec=Math.floor(diff/1000);
+    const d=Math.floor(sec/86400),h=Math.floor(sec%86400/3600),m=Math.floor(sec%3600/60);
+    const p=[];
+    if(d) p.push(d+(d===1?' día':' días'));
+    if(h) p.push(h+'h');
+    if(m) p.push(m+'min');
+    return 'faltan '+(p.join(' ')||'segundos')+' pa\' la joda';
+  }
+  function shareText(){
+    return '🦁 CUMPLE DE GIANNI — 20/06 · 19hs · Gerli.\n⏳ '+faltaTxt()+'. ¡Va a ser una noche épica, sumate!';
+  }
+  function showToast(m){toast.textContent=m;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800);}
+  shareBtn.onclick=async()=>{
+    const text=shareText(), url=location.href;
+    if(navigator.share){try{await navigator.share({title:'Cumple de Gianni 🦁',text,url});return;}catch(e){if(e.name==='AbortError')return;}}
+    window.open('https://wa.me/?text='+encodeURIComponent(text+' '+url),'_blank');
+  };
+
+  // ---- entrada VIP ----
+  (function(){
+    const modal=document.getElementById('vipModal');
+    const nom=document.getElementById('vipNom'),ape=document.getElementById('vipApe');
+    const who=document.getElementById('vipWho'),num=document.getElementById('vipNum');
+    const canvas=document.getElementById('vipCanvas');
+    const lion=new Image(); lion.src='../photos/leon.jpeg';
+
+    const fullName=()=>(nom.value.trim()+' '+ape.value.trim()).trim();
+    function ticketNo(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return String((h>>>0)%999+1).padStart(3,'0');}
+    function refresh(){
+      const fn=fullName();
+      who.textContent=fn?fn.toUpperCase():'TU NOMBRE';
+      num.textContent=fn?ticketNo(fn.toLowerCase()):'000';
+      try{localStorage.setItem('vipNom',nom.value);localStorage.setItem('vipApe',ape.value);}catch(e){}
+    }
+    nom.addEventListener('input',refresh); ape.addEventListener('input',refresh);
+
+    function openM(){modal.classList.add('open');modal.setAttribute('aria-hidden','false');setTimeout(()=>nom.focus(),60);}
+    function closeM(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');}
+    document.getElementById('vipOpen').onclick=openM;
+    document.getElementById('vipClose').onclick=closeM;
+    modal.addEventListener('click',e=>{if(e.target===modal)closeM();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeM();});
+
+    // prefill: ?to= o último usado
+    try{
+      const p=new URLSearchParams(location.search);
+      nom.value=p.get('to')||localStorage.getItem('vipNom')||'';
+      ape.value=(p.get('to')?'':localStorage.getItem('vipApe'))||'';
+    }catch(e){}
+    refresh();
+
+    // ---- render del ticket en canvas (sin librerías) ----
+    async function draw(){
+      const c=canvas.getContext('2d'),W=1000,H=430,stubW=190;
+      const P='#efe9da',P2='#e7e0cf',INK='#1a1714',GRN='#2c6f24',RED='#b8402f';
+      try{await Promise.all([
+        document.fonts.load("400 60px 'Permanent Marker'"),
+        document.fonts.load("700 24px 'Caveat'"),
+        document.fonts.load("700 18px 'Oswald'")
+      ]);}catch(e){}
+      c.clearRect(0,0,W,H);
+      c.fillStyle=P;c.fillRect(0,0,W,H);
+      c.fillStyle=P2;c.fillRect(W-stubW,0,stubW,H);
+      c.strokeStyle=INK;c.lineWidth=8;c.strokeRect(4,4,W-8,H-8);
+      c.save();c.setLineDash([12,10]);c.lineWidth=5;c.beginPath();c.moveTo(W-stubW,8);c.lineTo(W-stubW,H-8);c.stroke();c.restore();
+
+      const x=46;c.textAlign='left';c.textBaseline='alphabetic';
+      c.fillStyle=GRN;c.font="700 30px 'Caveat'";c.fillText('cumple de GIANNI 🦁 · alias León',x,62);
+      const fn=(fullName()||'TU NOMBRE').toUpperCase();
+      let fs=86;const maxW=W-stubW-x-26;c.font="400 "+fs+"px 'Permanent Marker'";
+      while(c.measureText(fn).width>maxW&&fs>32){fs-=2;c.font="400 "+fs+"px 'Permanent Marker'";}
+      c.fillStyle=INK;const ny=70+fs*0.78;c.fillText(fn,x,ny);
+      c.fillStyle=GRN;c.font="700 18px 'Oswald'";c.fillText('ADMITE 1 · ACCESO TOTAL A LA JODA',x,ny+30);
+      let my=ny+78,mx=x;[['FECHA','20/06'],['HORA','19 HS'],['LUGAR','GERLI']].forEach(([k,v])=>{
+        c.fillStyle=GRN;c.font="700 15px 'Oswald'";c.fillText(k,mx,my-20);
+        c.fillStyle=INK;c.font="400 30px 'Permanent Marker'";c.fillText(v,mx,my+10);
+        mx+=Math.max(150,c.measureText(v).width+72);
+      });
+      const by=my+40,bw=W-stubW-x-26;c.fillStyle=INK;let bx=x;
+      while(bx<x+bw){const w=2+((bx*7)%4);c.fillRect(bx,by,w,42);bx+=w+2+((bx*5)%4);}
+
+      // stub: león (mismo encuadre que el CSS: 185% / -34% / -70%)
+      const cxs=W-stubW/2,lcy=72,lr=44;
+      c.save();c.beginPath();c.arc(cxs,lcy,lr,0,Math.PI*2);c.closePath();c.clip();
+      if(lion.complete&&lion.naturalWidth){
+        const iw=1.85*(2*lr),ih=iw*(lion.naturalHeight/lion.naturalWidth);
+        c.drawImage(lion,(cxs-lr)-0.34*(2*lr),(lcy-lr)-0.70*(2*lr),iw,ih);
+      }else{c.fillStyle=P;c.fillRect(cxs-lr,lcy-lr,2*lr,2*lr);}
+      c.restore();c.lineWidth=4;c.strokeStyle=INK;c.beginPath();c.arc(cxs,lcy,lr,0,Math.PI*2);c.stroke();
+      c.save();c.translate(cxs,H/2+6);c.rotate(-Math.PI/2);c.fillStyle=GRN;c.font="700 16px 'Oswald'";c.textAlign='center';c.fillText('E N T R A D A',0,0);c.restore();
+      c.fillStyle=RED;c.font="400 54px 'Permanent Marker'";c.textAlign='center';c.fillText(num.textContent,cxs,H-32);c.textAlign='left';
+      return canvas;
+    }
+    const toBlob=()=>new Promise(r=>canvas.toBlob(r,'image/png'));
+    const shareText=()=>'🦁 Tengo mi ENTRADA pal CUMPLE DE GIANNI — 20/06 · 19hs · Gerli. ¡Sumate, va a ser épica!';
+
+    async function download(){
+      await draw();const b=await toBlob();const a=document.createElement('a');
+      a.href=URL.createObjectURL(b);a.download='entrada-gianni-'+((fullName()||'vip').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''))+'.png';
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+    }
+    async function share(){
+      const text=shareText(),url=location.href;
+      await draw();const b=await toBlob();const file=new File([b],'entrada-gianni.png',{type:'image/png'});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){
+        try{await navigator.share({files:[file],text,title:'Entrada Cumple Gianni 🦁'});return;}catch(e){if(e.name==='AbortError')return;}
+      }
+      window.open('https://wa.me/?text='+encodeURIComponent(text+' '+url),'_blank');
+    }
+    const dl=document.getElementById('vipDownload'),sh=document.getElementById('vipShare');
+    dl.onclick=download; sh.onclick=share;
+    [dl,sh].forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}}));
+  })();
+
+  // ---- ¿Qué preferís? ----
+  (function(){
+    const QP=[
+      {"a": "Tomar fernet caliente sin hielo", "b": "Comer el asado del León todavía crudo"},
+      {"a": "Que te vea tu ex re en pedo en Gerli", "b": "Vomitar en el bondi lleno un sábado"},
+      {"a": "Bailar cumbia sobrio en medio de la ronda", "b": "Cantar reggaetón desafinando en el karaoke"},
+      {"a": "Quedarte sin batería toda la noche", "b": "Quedarte sin un peso toda la noche"},
+      {"a": "Que te toque pagar todo el delivery", "b": "Que te toque limpiar todo al otro día"},
+      {"a": "Dormir en el patio sin saber cómo llegaste", "b": "Despertarte en la casa de un desconocido en Lanús"},
+      {"a": "Que se te vuelque el fernet en la ropa nueva", "b": "Que se te caiga el choripán al piso boca abajo"},
+      {"a": "Mandarle un audio de 5 min en pedo a tu jefe", "b": "Escribirle a tu ex a las 4 de la mañana"},
+      {"a": "Ser el primero en irse del cumple", "b": "Ser el último que no se quiere ir nunca"},
+      {"a": "Que el DJ ponga solo perreo", "b": "Que el DJ ponga solo rock nacional del 2000"},
+      {"a": "Comer una empanada que estuvo 3 horas al sol", "b": "Tomar del pico de la botella que chuparon todos"},
+      {"a": "Que te afanen las zapatillas en la previa", "b": "Que te afanen el cargador para siempre"},
+      {"a": "Aguantar las ganas de mear 2 horas", "b": "Usar el baño tapado del boliche"},
+      {"a": "Que saquen una foto horrible tuya y la suban", "b": "Que te graben bailando y lo tiren al grupo"},
+      {"a": "Pelearte con un amigo y amigarte llorando", "b": "Confesar que estás enganchado con alguien del grupo"},
+      {"a": "Tener resaca 3 días seguidos", "b": "No poder tomar nada en todo el cumple"},
+      {"a": "Que te toque manejar y volver sobrio", "b": "Ser el que cuida a todos los pedos"},
+      {"a": "Comer un pancho frío de la estación de servicio", "b": "Tomar mate con yerba de hace una semana"},
+      {"a": "Que se entere todo el barrio de tu cagada", "b": "Que se entere tu vieja"},
+      {"a": "Cantar el feliz cumple desafinando vos solo", "b": "Que se apaguen las velitas y quedar en orsai"},
+      {"a": "Perder en el truco y pagar la próxima", "b": "Ganar al truco y que te bardeen de tramposo toda la noche"},
+      {"a": "Que un mosquito te coma toda la noche", "b": "Bancarte al que cuenta la misma anécdota mil veces"},
+      {"a": "Quedarte dormido en la mesa del asado", "b": "Roncar en el sillón con todos filmándote"},
+      {"a": "Que tu crush te vea tropezar y caer", "b": "Que tu crush escuche tu risa de hiena"},
+      {"a": "Tomar toda la noche en vasos que pierden", "b": "Tener un solo cubito de hielo para todo el cumple"},
+      {"a": "Bancarte al borracho llorón", "b": "Bancarte al borracho que se pone filósofo"},
+      {"a": "Que te toque la silla que se rompe en la mesa", "b": "Que te toque el lado de la mesa sin enchufe"},
+      {"a": "Que te spoileen el final de tu serie", "b": "Que te manden 47 estados seguidos del grupo"},
+      {"a": "Ser el León del grupo, el alfa", "b": "Ser el que siempre trae el fernet, el proveedor"},
+      {"a": "Chamuyar mal y quedar en visto delante de todos", "b": "Que te funen en el grupo por un mensaje viejo de hace 2 años"},
+      {"a": "Bancarte a Alejo mandando 200 audios seguidos", "b": "Bancarte a Mati que desaparece toda la noche"},
+      {"a": "Que Luca te cobre hasta el hielo", "b": "Que Feli te organice hasta cómo respirar"},
+      {"a": "Comer un asado hecho por el León", "b": "Comer un asado hecho por alguien que nunca prendió un fuego"},
+      {"a": "Que Gian diga 'que rico' con la comida quemada", "b": "Que nadie quiera tocar el asado"},
+      {"a": "Ir al camping La Puerta y que llueva toda la finde", "b": "Quedarte en Gerli sin plan"},
+      {"a": "Que Alejo te gane una discusión de 4 horas por audio", "b": "Que Mati conteste el mensaje 3 días después"},
+      {"a": "Que el León se coma tu última porción de asado", "b": "Que Luca se tome tu fernet sin avisar"},
+      {"a": "Ser el que organiza todo como Feli", "b": "Ser el que no aparece nunca como Mati"},
+      {"a": "Que la previa empiece a las 12 de la noche", "b": "Que el cumple termine a las 11 de la noche"},
+      {"a": "Que te toque el lado de Alejo contando anécdotas", "b": "Que te toque el lado del que solo habla de laburo"},
+      {"a": "Tomar fernet con Coca tibia", "b": "Tomar fernet con Sprite, como un psicópata"},
+      {"a": "Que el fuego no prenda nunca", "b": "Que el fuego prenda y se queme todo al toque"},
+      {"a": "Que Luca traiga el fernet pero se olvide la Coca", "b": "Que traiga la Coca pero se olvide el fernet"},
+      {"a": "Quedar sin señal justo cuando tenés que mandar la ubicación", "b": "Que te llamen 20 veces preguntando dónde es"},
+      {"a": "Bancarte un asado donde la carne la corta uno solo lentísimo", "b": "Bancarte que sirvan todo crudo por apurados"},
+      {"a": "Que te toque lavar todos los platos del asado", "b": "Que te toque sacar la basura a las 5am"},
+      {"a": "Comer milanesa de la heladera apagada hace 2 días", "b": "Comer sushi de un kiosco de Gerli"},
+      {"a": "Que el cumpleañero llegue 3 horas tarde a su propio cumple", "b": "Que se vaya el primero del cumple"},
+      {"a": "Tener que explicar el chiste interno a alguien de afuera", "b": "Que cuenten tu peor anécdota delante de tu mamá"},
+      {"a": "Ser el sobrio que se acuerda todo al otro día", "b": "Ser el pedo que no se acuerda nada"},
+      {"a": "Que te toque el baño después de que entró el León", "b": "Que no haya papel en todo el cumple"},
+      {"a": "Bailar con la abuela toda la noche", "b": "No bailar y que te digan amargo toda la noche"},
+      {"a": "Que se pinche la goma yendo a Gerli", "b": "Que te quedes sin nafta volviendo a las 6am"},
+      {"a": "Tomar una birra tibia", "b": "Tomar un fernet con hielo que es pura agua"},
+      {"a": "Que te toque cuidar al más pedo de todos", "b": "Ser vos el más pedo de todos"},
+      {"a": "Que te roben el asado del balcón un domingo", "b": "Que se queme la única bandeja de provoleta"},
+      {"a": "Pasar el cumple sin batería para fotos", "b": "Pasar el cumple sin plata para nada"},
+      {"a": "Que todos lleguen tarde menos vos", "b": "Llegar tarde vos y que te esperen bardeando"},
+      {"a": "Comerte un alfajor de hace 6 meses", "b": "Tomarte una gaseosa abierta de ayer sin gas"},
+      {"a": "Que te toque el karaoke obligatorio", "b": "Que te toque hablar en el brindis sin preparar nada"},
+      {"a": "Que tu ex te vea en pedo en Gerli", "b": "Que Gian se coma tu última porción de asado"},
+      {"a": "Cantar el feliz cumple desafinando solo", "b": "Roncar en el sillón con todos filmándote"},
+      {"a": "Roncar en el sillón con todos filmándote", "b": "Que se te vuelque el fernet en la ropa nueva"},
+      {"a": "Limpiar todo el quilombo al otro día", "b": "Que te graben bailando y lo tiren al grupo"},
+      {"a": "Manejar sobrio mientras todos están en pedo", "b": "Bancarte al borracho llorón toda la noche"},
+      {"a": "Que la previa arranque a las 12 de la noche", "b": "Comer milanesa de la heladera apagada hace 2 días"},
+      {"a": "Bancarte al borracho que se pone filósofo", "b": "Que te toque cuidar al más pedo de todos"},
+      {"a": "Manejar sobrio mientras todos están en pedo", "b": "Que te toque la silla que se rompe"},
+      {"a": "Que Luca te cobre hasta el hielo", "b": "Usar el baño tapado del boliche"},
+      {"a": "Que Mati reaparezca recién en el postre", "b": "Usar el baño tapado del boliche"},
+      {"a": "Que tu ex te vea en pedo en Gerli", "b": "Bancarte 47 estados seguidos del grupo"},
+      {"a": "Ser el último que no se quiere ir nunca", "b": "Comer milanesa de la heladera apagada hace 2 días"},
+      {"a": "Tener resaca 3 días seguidos", "b": "Ser el último que no se quiere ir nunca"},
+      {"a": "Comerte el asado crudo del León", "b": "Que Luca se tome tu fernet sin avisar"},
+      {"a": "Aguantar las ganas de mear 2 horas", "b": "Que se te vuelque el fernet en la ropa nueva"},
+      {"a": "Que te graben bailando y lo tiren al grupo", "b": "Explicarle el chiste interno a alguien de afuera"},
+      {"a": "Que te graben bailando y lo tiren al grupo", "b": "Que el asado lo haga uno que nunca prendió un fuego"},
+      {"a": "Que Luca te cobre hasta el hielo", "b": "Quedar sin señal cuando tenés que mandar la ubicación"},
+      {"a": "Perder en el truco y pagar la próxima", "b": "Que te toque cuidar al más pedo de todos"},
+      {"a": "Que se entere tu vieja de la cagada", "b": "Que se te vuelque el fernet en la ropa nueva"},
+      {"a": "Que tu ex te vea en pedo en Gerli", "b": "Que se queme la única provoleta"},
+      {"a": "Tomar mate con yerba de hace una semana", "b": "Que se te caiga el choripán al piso"},
+      {"a": "Que te afanen las zapatillas en la previa", "b": "Explicarle el chiste interno a alguien de afuera"},
+      {"a": "Roncar en el sillón con todos filmándote", "b": "Que te toque cuidar al más pedo de todos"},
+      {"a": "Que Mati reaparezca recién en el postre", "b": "Hablar en el brindis sin preparar nada"},
+      {"a": "Bancarte rock nacional del 2000 toda la noche", "b": "Ser vos el más pedo de todos"},
+      {"a": "Tomar mate con yerba de hace una semana", "b": "Que la previa arranque a las 12 de la noche"},
+      {"a": "Quedarte sin un peso en la previa", "b": "Dormir en el patio sin saber cómo llegaste"},
+      {"a": "Que te afanen las zapatillas en la previa", "b": "Que se queme la única provoleta"},
+      {"a": "Que Gian se coma tu última porción de asado", "b": "Que se queme la única provoleta"},
+      {"a": "Que Mati reaparezca recién en el postre", "b": "Que el asado lo haga uno que nunca prendió un fuego"},
+      {"a": "Manejar sobrio mientras todos están en pedo", "b": "Que Feli te organice cada minuto del finde"},
+      {"a": "Quedarte sin batería toda la noche", "b": "Bancarte al borracho que se pone filósofo"},
+      {"a": "Que Mati reaparezca recién en el postre", "b": "Que te funen por un mensaje viejo de hace 2 años"},
+      {"a": "Que se entere tu vieja de la cagada", "b": "Que se te caiga el choripán al piso"},
+      {"a": "Comerte el asado crudo del León", "b": "Quedarte sin un peso en la previa"},
+      {"a": "Spoilearte el final de tu serie", "b": "Que te toque cuidar al más pedo de todos"},
+      {"a": "Ser el primero en irse del cumple", "b": "Ser el sobrio que cuida a todos los pedos"},
+      {"a": "Chamuyar mal y quedar en visto delante de todos", "b": "Sacar la basura a las 5 de la mañana"},
+      {"a": "Manejar sobrio mientras todos están en pedo", "b": "Que te toque cuidar al más pedo de todos"},
+      {"a": "Lavar todos los platos del asado vos solo", "b": "Comerte un alfajor de hace 6 meses"},
+      {"a": "Que se pinche la goma yendo a Gerli", "b": "Que todos lleguen tarde menos vos"},
+      {"a": "Spoilearte el final de tu serie", "b": "Que todos lleguen tarde menos vos"},
+      {"a": "Comer un pancho frío de la estación de servicio", "b": "Bancarte 47 estados seguidos del grupo"},
+      {"a": "Que el asado lo haga uno que nunca prendió un fuego", "b": "Que todos lleguen tarde menos vos"},
+      {"a": "Ser el primero en irse del cumple", "b": "Dormir en el patio sin saber cómo llegaste"},
+      {"a": "Tomar una birra tibia de litro", "b": "Que te toque cuidar al más pedo de todos"},
+      {"a": "Vomitar en el bondi lleno", "b": "Tomar una birra tibia de litro"},
+      {"a": "Comer una empanada que estuvo 3 horas al sol", "b": "Comer un pancho frío de la estación de servicio"},
+      {"a": "Despertarte en la casa de un desconocido en Lanús", "b": "Bancarte al borracho que se pone filósofo"},
+      {"a": "Tomar fernet caliente sin hielo", "b": "Ser el sobrio que cuida a todos los pedos"},
+      {"a": "Cantar el feliz cumple desafinando solo", "b": "Que te funen por un mensaje viejo de hace 2 años"},
+      {"a": "Comer un pancho frío de la estación de servicio", "b": "Ser el primero en irse del cumple"},
+      {"a": "Vomitar en el bondi lleno", "b": "Tomar del pico de la botella que chuparon todos"},
+      {"a": "Que Luca se tome tu fernet sin avisar", "b": "Spoilearte el final de tu serie"},
+      {"a": "Aguantar las ganas de mear 2 horas", "b": "Bancarte al borracho llorón toda la noche"},
+      {"a": "Comer un pancho frío de la estación de servicio", "b": "Que la previa arranque a las 12 de la noche"},
+      {"a": "Comer una empanada que estuvo 3 horas al sol", "b": "Ser el último que no se quiere ir nunca"},
+      {"a": "Tomar fernet caliente sin hielo", "b": "Ser vos el más pedo de todos"},
+      {"a": "Tomar del pico de la botella que chuparon todos", "b": "Que te graben bailando y lo tiren al grupo"},
+      {"a": "Que la previa arranque a las 12 de la noche", "b": "Que te toque cuidar al más pedo de todos"},
+      {"a": "Que se queme la única provoleta", "b": "Que todos lleguen tarde menos vos"},
+      {"a": "Tomar del pico de la botella que chuparon todos", "b": "Que todos lleguen tarde menos vos"},
+      {"a": "Comer una empanada que estuvo 3 horas al sol", "b": "Que se te vuelque el fernet en la ropa nueva"},
+      {"a": "Despertarte en la casa de un desconocido en Lanús", "b": "Bancarte al borracho llorón toda la noche"},
+      {"a": "Roncar en el sillón con todos filmándote", "b": "Hablar en el brindis sin preparar nada"},
+      {"a": "Cantar el feliz cumple desafinando solo", "b": "Que se te caiga el choripán al piso"},
+      {"a": "Quedarte sin un peso en la previa", "b": "Explicarle el chiste interno a alguien de afuera"},
+      {"a": "Cantar el feliz cumple desafinando solo", "b": "Ir al camping La Puerta y que llueva toda la finde"},
+      {"a": "Que Mati reaparezca recién en el postre", "b": "Quedarte sin batería toda la noche"},
+      {"a": "Que Feli te organice cada minuto del finde", "b": "Perder en el truco y pagar la próxima"},
+      {"a": "Tomar del pico de la botella que chuparon todos", "b": "Bancarte al borracho que se pone filósofo"},
+      {"a": "Manejar sobrio mientras todos están en pedo", "b": "Usar el baño tapado del boliche"},
+      {"a": "Tomar mate con yerba de hace una semana", "b": "Ser vos el más pedo de todos"},
+      {"a": "Hablar en el brindis sin preparar nada", "b": "Tomar gaseosa de ayer sin gas"},
+      {"a": "Quedarte sin un peso en la previa", "b": "Perder en el truco y pagar la próxima"},
+      {"a": "Que el cumpleañero llegue 3 horas tarde", "b": "Ser vos el más pedo de todos"},
+      {"a": "Limpiar todo el quilombo al otro día", "b": "Bancarte al borracho que se pone filósofo"},
+      {"a": "Comerte el asado crudo del León", "b": "Ser vos el más pedo de todos"},
+      {"a": "Vomitar en el bondi lleno", "b": "Aguantar las ganas de mear 2 horas"},
+      {"a": "Vomitar en el bondi lleno", "b": "Usar el baño tapado del boliche"},
+      {"a": "Que Luca te cobre hasta el hielo", "b": "Tomar una birra tibia de litro"},
+      {"a": "Bancarte al borracho que se pone filósofo", "b": "Ser vos el más pedo de todos"},
+      {"a": "Manejar sobrio mientras todos están en pedo", "b": "Quedar sin señal cuando tenés que mandar la ubicación"},
+      {"a": "Bancarte al borracho que se pone filósofo", "b": "Quedarte sin nafta volviendo a las 6am"},
+      {"a": "Vomitar en el bondi lleno", "b": "Comer una empanada que estuvo 3 horas al sol"},
+      {"a": "Manejar sobrio mientras todos están en pedo", "b": "Que se te caiga el choripán al piso"},
+      {"a": "Tomar mate con yerba de hace una semana", "b": "Que te pique un mosquito en el oído toda la noche"},
+      {"a": "Que Luca te cobre hasta el hielo", "b": "Tomar gaseosa de ayer sin gas"},
+      {"a": "Usar el baño tapado del boliche", "b": "Comer milanesa de la heladera apagada hace 2 días"},
+      {"a": "Bailar cumbia sobrio en medio de la ronda", "b": "Que se te vuelque el fernet en la ropa nueva"},
+      {"a": "Bailar cumbia sobrio en medio de la ronda", "b": "Que el asado lo haga uno que nunca prendió un fuego"},
+      {"a": "Chamuyar mal y quedar en visto delante de todos", "b": "Que te toque cuidar al más pedo de todos"},
+      {"a": "Ser el primero en irse del cumple", "b": "Comerte un alfajor de hace 6 meses"},
+      {"a": "Cantar el feliz cumple desafinando solo", "b": "Que te pique un mosquito en el oído toda la noche"},
+      {"a": "Que Luca se tome tu fernet sin avisar", "b": "Comerte un alfajor de hace 6 meses"},
+      {"a": "Que tu ex te vea en pedo en Gerli", "b": "Comerte un alfajor de hace 6 meses"},
+      {"a": "Que el León diga que rico con la comida quemada", "b": "Que te funen por un mensaje viejo de hace 2 años"},
+      {"a": "Que la previa arranque a las 12 de la noche", "b": "Que te pique un mosquito en el oído toda la noche"},
+      {"a": "Quedar sin señal cuando tenés que mandar la ubicación", "b": "Que todos lleguen tarde menos vos"},
+      {"a": "Chamuyar mal y quedar en visto delante de todos", "b": "Dormir en el patio sin saber cómo llegaste"},
+      {"a": "Que Mati reaparezca recién en el postre", "b": "Aguantar las ganas de mear 2 horas"},
+      {"a": "Comerte el asado crudo del León", "b": "Que el asado lo haga uno que nunca prendió un fuego"},
+      {"a": "Bancarte rock nacional del 2000 toda la noche", "b": "Que te toque cuidar al más pedo de todos"},
+      {"a": "Bancarte 47 estados seguidos del grupo", "b": "Lavar todos los platos del asado vos solo"},
+      {"a": "Bancarte al borracho llorón toda la noche", "b": "Hablar en el brindis sin preparar nada"},
+      {"a": "Usar el baño tapado del boliche", "b": "Quedarte sin nafta volviendo a las 6am"},
+      {"a": "Que el cumpleañero llegue 3 horas tarde", "b": "Comerte un alfajor de hace 6 meses"},
+      {"a": "Que se te vuelque el fernet en la ropa nueva", "b": "Que te pique un mosquito en el oído toda la noche"},
+      {"a": "Que Mati reaparezca recién en el postre", "b": "Bailar cumbia sobrio en medio de la ronda"},
+      {"a": "Tomar del pico de la botella que chuparon todos", "b": "Ir al camping La Puerta y que llueva toda la finde"},
+      {"a": "Cantar el feliz cumple desafinando solo", "b": "Chamuyar mal y quedar en visto delante de todos"},
+      {"a": "Comer milanesa de la heladera apagada hace 2 días", "b": "Tomar una birra tibia de litro"},
+      {"a": "Que la previa arranque a las 12 de la noche", "b": "Hablar en el brindis sin preparar nada"},
+      {"a": "Comerte el asado crudo del León", "b": "Que se entere tu vieja de la cagada"},
+      {"a": "Que se entere tu vieja de la cagada", "b": "Tomar una birra tibia de litro"},
+      {"a": "Que se pinche la goma yendo a Gerli", "b": "Que te toque cuidar al más pedo de todos"},
+      {"a": "Que se te caiga el choripán al piso", "b": "Bancarte al borracho que se pone filósofo"},
+      {"a": "Comer un pancho frío de la estación de servicio", "b": "Quedarte sin nafta volviendo a las 6am"},
+      {"a": "Perder en el truco y pagar la próxima", "b": "Que el asado lo haga uno que nunca prendió un fuego"},
+      {"a": "Tomar del pico de la botella que chuparon todos", "b": "Roncar en el sillón con todos filmándote"},
+      {"a": "Chamuyar mal y quedar en visto delante de todos", "b": "Hablar en el brindis sin preparar nada"},
+      {"a": "Vomitar en el bondi lleno", "b": "Que te toque la silla que se rompe"},
+      {"a": "Que te graben bailando y lo tiren al grupo", "b": "Comer un pancho frío de la estación de servicio"},
+      {"a": "Bailar cumbia sobrio en medio de la ronda", "b": "Comer un pancho frío de la estación de servicio"},
+      {"a": "Bancarte a Alejo con 200 audios", "b": "Chamuyar mal y quedar en visto delante de todos"},
+      {"a": "Que te pique un mosquito en el oído toda la noche", "b": "Que te toque cuidar al más pedo de todos"},
+      {"a": "Bancarte rock nacional del 2000 toda la noche", "b": "Que te funen por un mensaje viejo de hace 2 años"},
+      {"a": "Tomar del pico de la botella que chuparon todos", "b": "Tomar una birra tibia de litro"},
+      {"a": "Cantar el feliz cumple desafinando solo", "b": "Despertarte en la casa de un desconocido en Lanús"},
+      {"a": "Que Feli te organice cada minuto del finde", "b": "Spoilearte el final de tu serie"},
+      {"a": "Tener resaca 3 días seguidos", "b": "Hablar en el brindis sin preparar nada"},
+      {"a": "Sacar la basura a las 5 de la mañana", "b": "Que te toque cuidar al más pedo de todos"},
+      {"a": "Ser el sobrio que cuida a todos los pedos", "b": "Lavar todos los platos del asado vos solo"},
+      {"a": "Comerte el asado crudo del León", "b": "Que te toque la silla que se rompe"},
+      {"a": "Limpiar todo el quilombo al otro día", "b": "Bailar cumbia sobrio en medio de la ronda"},
+      {"a": "Comer una empanada que estuvo 3 horas al sol", "b": "Quedarte sin batería toda la noche"},
+      {"a": "Que Mati reaparezca recién en el postre", "b": "Chamuyar mal y quedar en visto delante de todos"},
+      {"a": "Tomar del pico de la botella que chuparon todos", "b": "Bancarte al borracho llorón toda la noche"},
+      {"a": "Comerte el asado crudo del León", "b": "Ir al camping La Puerta y que llueva toda la finde"},
+      {"a": "Que te graben bailando y lo tiren al grupo", "b": "Bancarte al borracho llorón toda la noche"},
+      {"a": "Quedarte sin batería toda la noche", "b": "Bancarte al borracho llorón toda la noche"},
+      {"a": "Bancarte rock nacional del 2000 toda la noche", "b": "Que el cumpleañero llegue 3 horas tarde"},
+      {"a": "Ser el sobrio que cuida a todos los pedos", "b": "Ser vos el más pedo de todos"},
+      {"a": "Ir al camping La Puerta y que llueva toda la finde", "b": "Perder en el truco y pagar la próxima"},
+      {"a": "Que te toque cuidar al más pedo de todos", "b": "Que todos lleguen tarde menos vos"},
+      {"a": "Que el asado lo haga uno que nunca prendió un fuego", "b": "Quedar sin señal cuando tenés que mandar la ubicación"},
+      {"a": "Vomitar en el bondi lleno", "b": "Bancarte al borracho llorón toda la noche"},
+      {"a": "Comerte el asado crudo del León", "b": "Que tu ex te vea en pedo en Gerli"},
+      {"a": "Bancarte 47 estados seguidos del grupo", "b": "Que la previa arranque a las 12 de la noche"},
+      {"a": "Que se pinche la goma yendo a Gerli", "b": "Quedarte sin nafta volviendo a las 6am"},
+      {"a": "Que te pique un mosquito en el oído toda la noche", "b": "Comerte un alfajor de hace 6 meses"},
+      {"a": "Comer un pancho frío de la estación de servicio", "b": "Chamuyar mal y quedar en visto delante de todos"},
+      {"a": "Que Mati reaparezca recién en el postre", "b": "Spoilearte el final de tu serie"},
+      {"a": "Bancarte al borracho llorón toda la noche", "b": "Sacar la basura a las 5 de la mañana"},
+      {"a": "Comer una empanada que estuvo 3 horas al sol", "b": "Que te pique un mosquito en el oído toda la noche"},
+      {"a": "Manejar sobrio mientras todos están en pedo", "b": "Ser vos el más pedo de todos"},
+      {"a": "Que se te vuelque el fernet en la ropa nueva", "b": "Tomar una birra tibia de litro"},
+      {"a": "Que te funen por un mensaje viejo de hace 2 años", "b": "Comer milanesa de la heladera apagada hace 2 días"},
+      {"a": "Perder en el truco y pagar la próxima", "b": "Quedarte sin nafta volviendo a las 6am"},
+      {"a": "Quedarte sin un peso en la previa", "b": "Bancarte 47 estados seguidos del grupo"},
+      {"a": "Bancarte rock nacional del 2000 toda la noche", "b": "Usar el baño tapado del boliche"},
+      {"a": "Vomitar en el bondi lleno", "b": "Comer un pancho frío de la estación de servicio"},
+      {"a": "Limpiar todo el quilombo al otro día", "b": "Que Gian se coma tu última porción de asado"},
+      {"a": "Tener resaca 3 días seguidos", "b": "Sacar la basura a las 5 de la mañana"},
+      {"a": "Vomitar en el bondi lleno", "b": "Ser el sobrio que cuida a todos los pedos"},
+      {"a": "Comerte el asado crudo del León", "b": "Que se pinche la goma yendo a Gerli"},
+      {"a": "Tomar fernet caliente sin hielo", "b": "Que se pinche la goma yendo a Gerli"},
+      {"a": "Vomitar en el bondi lleno", "b": "Tomar gaseosa de ayer sin gas"},
+      {"a": "Que la previa arranque a las 12 de la noche", "b": "Tomar gaseosa de ayer sin gas"},
+      {"a": "Comerte el asado crudo del León", "b": "Comer milanesa de la heladera apagada hace 2 días"},
+      {"a": "Aguantar las ganas de mear 2 horas", "b": "Ser vos el más pedo de todos"},
+      {"a": "Que se pinche la goma yendo a Gerli", "b": "Sacar la basura a las 5 de la mañana"},
+      {"a": "Tomar del pico de la botella que chuparon todos", "b": "Que el asado lo haga uno que nunca prendió un fuego"},
+      {"a": "Tomar gaseosa de ayer sin gas", "b": "Ser vos el más pedo de todos"},
+      {"a": "Que te afanen las zapatillas en la previa", "b": "Ser el sobrio que cuida a todos los pedos"},
+      {"a": "Bancarte rock nacional del 2000 toda la noche", "b": "Tomar mate con yerba de hace una semana"},
+      {"a": "Que Feli te organice cada minuto del finde", "b": "Dormir en el patio sin saber cómo llegaste"},
+      {"a": "Que tu ex te vea en pedo en Gerli", "b": "Que la previa arranque a las 12 de la noche"},
+      {"a": "Tener resaca 3 días seguidos", "b": "Que la previa arranque a las 12 de la noche"},
+      {"a": "Tomar mate con yerba de hace una semana", "b": "Ser el primero en irse del cumple"},
+      {"a": "Que Gian se coma tu última porción de asado", "b": "Quedarte sin nafta volviendo a las 6am"},
+      {"a": "Que Mati reaparezca recién en el postre", "b": "Que se entere tu vieja de la cagada"},
+      {"a": "Bailar cumbia sobrio en medio de la ronda", "b": "Que el cumpleañero llegue 3 horas tarde"},
+      {"a": "Que se te caiga el choripán al piso", "b": "Que se pinche la goma yendo a Gerli"},
+      {"a": "Aguantar las ganas de mear 2 horas", "b": "Que se te caiga el choripán al piso"},
+      {"a": "Que te graben bailando y lo tiren al grupo", "b": "Spoilearte el final de tu serie"},
+      {"a": "Que te funen por un mensaje viejo de hace 2 años", "b": "Que se te caiga el choripán al piso"},
+      {"a": "Ser el último que no se quiere ir nunca", "b": "Bancarte al borracho que se pone filósofo"},
+      {"a": "Tomar fernet caliente sin hielo", "b": "Ser el primero en irse del cumple"},
+      {"a": "Bancarte al borracho llorón toda la noche", "b": "Explicarle el chiste interno a alguien de afuera"},
+      {"a": "Que te afanen las zapatillas en la previa", "b": "Comer un pancho frío de la estación de servicio"},
+      {"a": "Aguantar las ganas de mear 2 horas", "b": "Bancarte al borracho que se pone filósofo"},
+      {"a": "Bancarte a Alejo con 200 audios", "b": "Comer milanesa de la heladera apagada hace 2 días"},
+      {"a": "Perder en el truco y pagar la próxima", "b": "Que el cumpleañero llegue 3 horas tarde"},
+      {"a": "Que el León diga que rico con la comida quemada", "b": "Quedarte sin batería toda la noche"},
+      {"a": "Bancarte rock nacional del 2000 toda la noche", "b": "Que todos lleguen tarde menos vos"},
+      {"a": "Que Luca se tome tu fernet sin avisar", "b": "Despertarte en la casa de un desconocido en Lanús"},
+      {"a": "Roncar en el sillón con todos filmándote", "b": "Ser el sobrio que cuida a todos los pedos"},
+      {"a": "Quedarte sin nafta volviendo a las 6am", "b": "Que te toque cuidar al más pedo de todos"},
+      {"a": "Tener resaca 3 días seguidos", "b": "Lavar todos los platos del asado vos solo"},
+      {"a": "Tener resaca 3 días seguidos", "b": "Que el asado lo haga uno que nunca prendió un fuego"},
+      {"a": "Que el León diga que rico con la comida quemada", "b": "Que te toque la silla que se rompe"},
+      {"a": "Que Luca te cobre hasta el hielo", "b": "Que todos lleguen tarde menos vos"},
+      {"a": "Ir al camping La Puerta y que llueva toda la finde", "b": "Comer un pancho frío de la estación de servicio"},
+      {"a": "Comerte el asado crudo del León", "b": "Que Gian se coma tu última porción de asado"},
+      {"a": "Roncar en el sillón con todos filmándote", "b": "Ser vos el más pedo de todos"},
+      {"a": "Tomar fernet caliente sin hielo", "b": "Que el cumpleañero llegue 3 horas tarde"},
+      {"a": "Que Luca se tome tu fernet sin avisar", "b": "Hablar en el brindis sin preparar nada"},
+      {"a": "Bancarte al borracho que se pone filósofo", "b": "Que todos lleguen tarde menos vos"},
+      {"a": "Ir al camping La Puerta y que llueva toda la finde", "b": "Bancarte al borracho que se pone filósofo"},
+      {"a": "Que se entere tu vieja de la cagada", "b": "Quedarte sin un peso en la previa"},
+      {"a": "Que Feli te organice cada minuto del finde", "b": "Bailar cumbia sobrio en medio de la ronda"},
+      {"a": "Aguantar las ganas de mear 2 horas", "b": "Que te graben bailando y lo tiren al grupo"},
+      {"a": "Bancarte a Alejo con 200 audios", "b": "Que te pique un mosquito en el oído toda la noche"},
+      {"a": "Aguantar las ganas de mear 2 horas", "b": "Ser el sobrio que cuida a todos los pedos"},
+      {"a": "Manejar sobrio mientras todos están en pedo", "b": "Comer un pancho frío de la estación de servicio"},
+      {"a": "Comer milanesa de la heladera apagada hace 2 días", "b": "Que el cumpleañero llegue 3 horas tarde"},
+      {"a": "Usar el baño tapado del boliche", "b": "Que la previa arranque a las 12 de la noche"},
+      {"a": "Tomar mate con yerba de hace una semana", "b": "Ser el último que no se quiere ir nunca"},
+      {"a": "Bailar cumbia sobrio en medio de la ronda", "b": "Que Luca se tome tu fernet sin avisar"},
+      {"a": "Tener resaca 3 días seguidos", "b": "Ser el sobrio que cuida a todos los pedos"},
+      {"a": "Que se pinche la goma yendo a Gerli", "b": "Lavar todos los platos del asado vos solo"},
+      {"a": "Ir al camping La Puerta y que llueva toda la finde", "b": "Tener resaca 3 días seguidos"},
+      {"a": "Que Luca te cobre hasta el hielo", "b": "Tener resaca 3 días seguidos"},
+      {"a": "Bancarte a Alejo con 200 audios", "b": "Ser el último que no se quiere ir nunca"},
+      {"a": "Que se te caiga el choripán al piso", "b": "Explicarle el chiste interno a alguien de afuera"},
+      {"a": "Lavar todos los platos del asado vos solo", "b": "Sacar la basura a las 5 de la mañana"},
+      {"a": "Que te funen por un mensaje viejo de hace 2 años", "b": "Tomar una birra tibia de litro"},
+      {"a": "Ir al camping La Puerta y que llueva toda la finde", "b": "Que Luca se tome tu fernet sin avisar"},
+      {"a": "Aguantar las ganas de mear 2 horas", "b": "Despertarte en la casa de un desconocido en Lanús"},
+      {"a": "Que se entere tu vieja de la cagada", "b": "Que la previa arranque a las 12 de la noche"},
+      {"a": "Roncar en el sillón con todos filmándote", "b": "Que el cumpleañero llegue 3 horas tarde"},
+      {"a": "Comer un pancho frío de la estación de servicio", "b": "Lavar todos los platos del asado vos solo"},
+      {"a": "Tomar mate con yerba de hace una semana", "b": "Spoilearte el final de tu serie"},
+      {"a": "Limpiar todo el quilombo al otro día", "b": "Usar el baño tapado del boliche"},
+      {"a": "Bancarte 47 estados seguidos del grupo", "b": "Ser vos el más pedo de todos"},
+      {"a": "Ser el primero en irse del cumple", "b": "Comer milanesa de la heladera apagada hace 2 días"},
+      {"a": "Ser el primero en irse del cumple", "b": "Que el cumpleañero llegue 3 horas tarde"},
+      {"a": "Que la previa arranque a las 12 de la noche", "b": "Que todos lleguen tarde menos vos"},
+      {"a": "Usar el baño tapado del boliche", "b": "Que todos lleguen tarde menos vos"},
+      {"a": "Ser el primero en irse del cumple", "b": "Bancarte al borracho que se pone filósofo"},
+      {"a": "Cantar el feliz cumple desafinando solo", "b": "Comer una empanada que estuvo 3 horas al sol"},
+      {"a": "Que Gian se coma tu última porción de asado", "b": "Quedar sin señal cuando tenés que mandar la ubicación"},
+      {"a": "Tomar fernet caliente sin hielo", "b": "Comer una empanada que estuvo 3 horas al sol"},
+      {"a": "Que Mati reaparezca recién en el postre", "b": "Limpiar todo el quilombo al otro día"},
+      {"a": "Que tu ex te vea en pedo en Gerli", "b": "Bailar cumbia sobrio en medio de la ronda"},
+      {"a": "Comer un pancho frío de la estación de servicio", "b": "Que se te caiga el choripán al piso"},
+      {"a": "Quedarte sin nafta volviendo a las 6am", "b": "Que todos lleguen tarde menos vos"},
+      {"a": "Quedarte sin batería toda la noche", "b": "Bailar cumbia sobrio en medio de la ronda"},
+      {"a": "Manejar sobrio mientras todos están en pedo", "b": "Bailar cumbia sobrio en medio de la ronda"},
+      {"a": "Que Feli te organice cada minuto del finde", "b": "Tener resaca 3 días seguidos"},
+      {"a": "Que Feli te organice cada minuto del finde", "b": "Aguantar las ganas de mear 2 horas"},
+      {"a": "Que se entere tu vieja de la cagada", "b": "Que el León diga que rico con la comida quemada"},
+      {"a": "Aguantar las ganas de mear 2 horas", "b": "Comer un pancho frío de la estación de servicio"},
+      {"a": "Bailar cumbia sobrio en medio de la ronda", "b": "Que te funen por un mensaje viejo de hace 2 años"},
+      {"a": "Ir al camping La Puerta y que llueva toda la finde", "b": "Que se queme la única provoleta"},
+      {"a": "Que Luca te cobre hasta el hielo", "b": "Quedarte sin un peso en la previa"},
+      {"a": "Que el asado lo haga uno que nunca prendió un fuego", "b": "Ser el sobrio que cuida a todos los pedos"},
+      {"a": "Bancarte al borracho llorón toda la noche", "b": "Bancarte al borracho que se pone filósofo"}
+    ];
+    const modal=document.getElementById('qpModal');
+    const txtA=document.getElementById('qpTxtA'),txtB=document.getElementById('qpTxtB');
+    const resA=document.getElementById('qpResA'),resB=document.getElementById('qpResB');
+    const optA=document.getElementById('qpOptA'),optB=document.getElementById('qpOptB');
+    const verdict=document.getElementById('qpVerdict'),sub=document.getElementById('qpSub'),count=document.getElementById('qpCount');
+    const votesBox=document.getElementById('qpVotes');
+    const CREW=[
+      {n:'León',e:'🦁',kw:['comer','asado','carne','pan ','rico','fernet','tomar','empanada','choripán','choripan','pancho','mate','birra','copa','comida','hielo','milanesa','postre','chupar','del pico','porción','porcion']},
+      {n:'Feli',e:'🧠',kw:['manejar','sobrio','limpiar','cuidar','organiz','responsable','temprano','plan','ordenar','laburo','trabaj','ubicación','ubicacion','explicar','primero en irse','sobrios']},
+      {n:'Alejo',e:'🐐',kw:['vomitar','pedo','bailar','cantar','ex ','vergüenza','vergonzoso','grit','romper','patio','desconocido','funen','horrible','último','ultimo','audios','caos','desafinando','tropezar','ridículo','ridiculo']},
+      {n:'Luca',e:'🥥',kw:['comprar','compro','pagar','plata','gast','delivery','cargador','zapatillas','traer','traiga','cobr','peso','robe','afanen','última porción']},
+      {n:'Mati',e:'🚑',kw:['dormir','quedarte','casa','tranqui','irse','sillón','sillon','roncar','solo','nadie','desaparezca','señal','senal','batería','bateria','sin señal','quedar']}
+    ];
+    function qph(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+    function votesFor(d){
+      const a=d.a.toLowerCase(),b=d.b.toLowerCase(),out={};
+      CREW.forEach(p=>{let sa=0,sb=0;p.kw.forEach(k=>{if(a.indexOf(k)>=0)sa++;if(b.indexOf(k)>=0)sb++;});
+        out[p.n]= sa>sb?'a' : sb>sa?'b' : ((qph(p.n+d.a+d.b)%2)?'a':'b');});
+      return out;
+    }
+    let deck=[],cur=null,answered=false,played=0;
+    const rnd=n=>Math.floor(Math.random()*n);
+    function shuffle(a){for(let i=a.length-1;i>0;i--){const j=rnd(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
+    function next(){
+      if(!deck.length) deck=shuffle(QP.map((_,i)=>i));
+      cur=QP[deck.pop()];
+      txtA.textContent=cur.a; txtB.textContent=cur.b;
+      resA.textContent=''; resB.textContent='';
+      optA.className='qp-opt qp-a'; optB.className='qp-opt qp-b';
+      verdict.textContent=''; verdict.classList.remove('show');
+      votesBox.innerHTML=''; votesBox.classList.remove('show');
+      sub.textContent='Tocá la que banques 👇';
+      answered=false;
+    }
+    function pick(which){
+      if(answered||!cur) return; answered=true; played++;
+      count.textContent='jugadas: '+played;
+      const v=votesFor(cur);
+      let nA=0; CREW.forEach(p=>{if(v[p.n]==='a')nA++;});
+      resA.textContent=nA+' voto'+(nA===1?'':'s');
+      resB.textContent=(CREW.length-nA)+' voto'+((CREW.length-nA)===1?'':'s');
+      optA.classList.add('answered',which==='a'?'picked':'dim');
+      optB.classList.add('answered',which==='b'?'picked':'dim');
+      votesBox.innerHTML='';
+      CREW.forEach(p=>{
+        const chip=document.createElement('span');
+        chip.className='qp-chip '+(v[p.n]===which?'agree':'dis');
+        chip.innerHTML=p.e+' '+p.n+' <span class="vt">'+(v[p.n]==='a'?'A':'B')+'</span>';
+        votesBox.appendChild(chip);
+      });
+      const agree=CREW.filter(p=>v[p.n]===which).map(p=>p.e+' '+p.n);
+      verdict.textContent = agree.length ? ('te bancan: '+agree.join(', ')) : 'votaste solo, sos un marciano 🦁';
+      votesBox.classList.add('show'); verdict.classList.add('show');
+      sub.textContent='así votó la banda 👇';
+    }
+    optA.onclick=()=>pick('a'); optB.onclick=()=>pick('b');
+    document.getElementById('qpNext').onclick=next;
+    document.getElementById('qpShare').onclick=()=>{
+      if(!cur) return;
+      const text='🦁 ¿QUÉ PREFERÍS? 👀\nA) '+cur.a+'\nB) '+cur.b+'\n¿vos qué? — cumple de Gianni';
+      const url=location.href;
+      if(navigator.share){navigator.share({text,url,title:'¿Qué preferís?'}).catch(()=>{});}
+      else window.open('https://wa.me/?text='+encodeURIComponent(text+' '+url),'_blank');
+    };
+    function openM(){modal.classList.add('open');modal.setAttribute('aria-hidden','false');if(!cur)next();}
+    function closeM(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');}
+    document.getElementById('qpOpen').onclick=openM;
+    document.getElementById('qpClose').onclick=closeM;
+    modal.addEventListener('click',e=>{if(e.target===modal)closeM();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeM();});
+  })();
+</script>
+</body>
+</html>

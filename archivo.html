@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Los pibes de Gerli · Archivo</title>
+<meta name="description" content="Todas las portadas: la actual y las archivadas." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=JetBrains+Mono:wght@400;500;600;800&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:#0c0c0e; --bg-2:#121214; --ink:#ece8e1; --mut:#7e7a72; --mut-2:#56534d;
+    --sig:#f2a93b; --sig-d:#c9842a; --line:rgba(236,232,225,.08); --line-2:rgba(236,232,225,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:'JetBrains Mono',ui-monospace,monospace;color:var(--ink);background:var(--bg);
+    -webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden;min-height:100dvh}
+
+  body::before{content:"";position:fixed;inset:-2px;z-index:0;pointer-events:none;opacity:.5;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(140% 80% at 50% 0%,#000 30%,transparent 80%);
+            mask-image:radial-gradient(140% 80% at 50% 0%,#000 30%,transparent 80%);
+    animation:drift 26s linear infinite}
+  @keyframes drift{to{background-position:46px 46px,46px 46px}}
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(60% 40% at 50% 0%,rgba(242,169,59,.08),transparent 70%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E")}
+
+  .wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:clamp(1.4rem,5vw,2.6rem) clamp(1.1rem,5vw,2rem) 5rem}
+
+  .top{display:flex;align-items:center;gap:1rem;justify-content:space-between;margin-bottom:clamp(2rem,7vw,3.4rem);
+    animation:fade .7s ease both}
+  .back{display:inline-flex;align-items:center;gap:.6em;color:var(--mut);text-decoration:none;
+    font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+    border:1px solid var(--line-2);border-radius:2px;padding:.7em 1.1em;transition:color .2s,border-color .2s}
+  .back:hover{color:var(--sig);border-color:var(--sig)}
+  .topcode{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut-2)}
+
+  .head{text-align:center;margin-bottom:clamp(2.2rem,7vw,3.6rem)}
+  .eyebrow{font-size:.66rem;letter-spacing:.42em;text-transform:uppercase;color:var(--sig);
+    animation:fade .8s ease .1s both}
+  .title{font-family:'Fraunces',serif;font-weight:400;font-optical-sizing:auto;line-height:1.02;letter-spacing:-.01em;
+    font-size:clamp(2.4rem,9vw,4.4rem);margin:.5rem 0 .7rem;animation:rise .9s cubic-bezier(.2,.7,.2,1) .15s both}
+  .title em{font-style:italic;color:var(--sig)}
+  .lede{color:var(--mut);font-size:clamp(.74rem,3vw,.9rem);letter-spacing:.02em;line-height:1.7;max-width:48ch;
+    margin:0 auto;animation:fade .9s ease .3s both}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:clamp(1.2rem,4vw,2rem)}
+
+  .card{position:relative;display:flex;flex-direction:column;text-decoration:none;color:inherit;
+    background:var(--bg-2);border:1px solid var(--line-2);border-radius:6px;overflow:hidden;
+    transition:transform .25s cubic-bezier(.2,.7,.2,1),border-color .25s,box-shadow .25s;
+    animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .card:nth-child(1){animation-delay:.35s}.card:nth-child(2){animation-delay:.45s}
+  .card:nth-child(3){animation-delay:.55s}.card:nth-child(4){animation-delay:.65s}
+  .card:hover{transform:translateY(-5px);border-color:var(--sig);box-shadow:0 18px 40px -22px rgba(242,169,59,.5)}
+
+  .shot{position:relative;width:100%;aspect-ratio:1140/780;overflow:hidden;background:var(--bg);border-bottom:1px solid var(--line-2)}
+  .shot iframe{position:absolute;top:0;left:0;width:1140px;height:780px;border:0;
+    transform:scale(var(--s,.25));transform-origin:top left;pointer-events:none}
+  .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(12,12,14,.55));
+    opacity:0;transition:opacity .25s}
+  .card:hover .shot::after{opacity:1}
+  .open{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.9);z-index:2;
+    display:inline-flex;align-items:center;gap:.5em;background:var(--sig);color:#1a1408;
+    font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:.7em 1.1em;border-radius:2px;
+    opacity:0;transition:opacity .25s,transform .25s}
+  .card:hover .open{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+  .meta{padding:1rem 1.1rem 1.15rem;display:flex;flex-direction:column;gap:.45rem}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:.8rem}
+  .idx{font-size:.62rem;letter-spacing:.2em;color:var(--mut-2)}
+  .tag{font-size:.56rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.3em .6em;border-radius:3px;white-space:nowrap}
+  .tag.live{background:rgba(242,169,59,.16);color:var(--sig);border:1px solid rgba(242,169,59,.4)}
+  .tag.ro{background:transparent;color:var(--mut);border:1px solid var(--line-2)}
+  .name{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:500;line-height:1.1;letter-spacing:-.01em}
+  .desc{font-size:.66rem;letter-spacing:.04em;color:var(--mut);line-height:1.55;text-transform:uppercase}
+
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}}
+  @keyframes rise{from{opacity:0;transform:translateY(20px)}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="back" href="index.html">← volver</a>
+      <span class="topcode">LPDG · ARCHIVO</span>
+    </div>
+
+    <header class="head">
+      <p class="eyebrow">colección</p>
+      <h1 class="title">Archivo de <em>portadas</em></h1>
+      <p class="lede">Cada vez que la página cambia de cara, la anterior queda acá. Tocá una para verla entera.</p>
+    </header>
+
+    <div class="grid">
+
+      <a class="card" href="index.html">
+        <div class="shot"><iframe src="index.html" loading="lazy" tabindex="-1" scrolling="no" title="En espera"></iframe></div>
+        <span class="open">abrir ↗</span>
+        <div class="meta">
+          <div class="row"><span class="idx">02 · actual</span><span class="tag live">en vivo</span></div>
+          <div class="name">En espera</div>
+          <div class="desc">standby · timer hacia arriba</div>
+        </div>
+      </a>
+
+      <a class="card" href="legacy/cumple-gianni.html">
+        <div class="shot"><iframe src="legacy/cumple-gianni.html" loading="lazy" tabindex="-1" scrolling="no" title="Cumple de Gianni"></iframe></div>
+        <span class="open">abrir ↗</span>
+        <div class="meta">
+          <div class="row"><span class="idx">01 · jun 2026</span><span class="tag ro">read only</span></div>
+          <div class="name">Cumple de Gianni</div>
+          <div class="desc">flyer underground · kraft & marker</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+<script>
+  // escala cada preview para que el iframe (1140px lógicos) entre justo en la card
+  function fit(){
+    document.querySelectorAll('.shot').forEach(s=>{
+      s.style.setProperty('--s', s.clientWidth/1140);
+    });
+  }
+  fit();
+  addEventListener('resize',fit);
+  addEventListener('load',fit);
+</script>
+</body>
+</html>
