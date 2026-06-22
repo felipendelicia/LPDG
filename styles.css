@@ -1,0 +1,89 @@
+/* ============================================================
+   LPDG — Sistema visual (tokens + primitivas compartidas)
+   Lo consumen index.html y archivo.html.
+   legacy/ NO usa esto: son snapshots con su propia identidad.
+   Estética: Under Club — negro puro, alto contraste, tipografía
+   bold mayúscula apretada, acento verde brillante.
+   ============================================================ */
+:root{
+  /* ---- paleta ---- */
+  --bg:#000;
+  --panel:#0b0b0d;
+  --panel-2:#121214;
+  --ink:#f5f5f3;
+  --mut:#8a8a8f;
+  --mut-2:#4f4f55;
+  --accent:#2bff88;
+  --accent-d:#13d96a;
+  --line:rgba(245,245,243,.14);
+  --line-2:rgba(245,245,243,.22);
+
+  /* ---- tipografía ---- */
+  --font-display:'Syne',sans-serif;   /* display / UI / timer */
+  --font-serif:'Instrument Serif',serif; /* citas en itálica */
+
+  /* ---- ritmo ---- */
+  --pad-x:clamp(1.2rem,5vw,4.5rem);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html,body{width:100%}
+body{
+  font-family:var(--font-display);color:var(--ink);background:var(--bg);
+  -webkit-font-smoothing:antialiased;position:relative;overflow-x:hidden;
+}
+
+/* grano tipo foto B/N (overlay global) */
+body::after{
+  content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opacity:.06;mix-blend-mode:screen;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- navegación ---- */
+.nav{position:fixed;top:0;left:0;width:100%;z-index:60;display:flex;justify-content:space-between;align-items:center;
+  padding:clamp(1rem,3vw,1.7rem) var(--pad-x);mix-blend-mode:difference}
+.brand{display:flex;align-items:center;gap:.6em;font-weight:800;letter-spacing:.04em;font-size:.95rem;color:#fff}
+.brand .tri{width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:15px solid #fff}
+.nav-r{display:flex;align-items:center;gap:clamp(1rem,4vw,2rem)}
+.nav-r a{color:#fff;text-decoration:none;font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:.5em;transition:opacity .2s}
+.nav-r a:hover{opacity:.5}
+.nav-r .st{color:#fff;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;display:flex;align-items:center;gap:.5em}
+.dot{width:7px;height:7px;border-radius:50%;background:#fff;animation:blink 1.2s steps(2) infinite}
+@keyframes blink{50%{opacity:.2}}
+
+/* ---- etiqueta de sección ---- */
+.eyebrow{font-weight:700;font-size:.78rem;letter-spacing:.4em;text-transform:uppercase;color:var(--accent);
+  display:flex;align-items:center;gap:1em}
+.eyebrow::after{content:"";height:2px;width:clamp(40px,12vw,140px);background:var(--accent)}
+
+/* ---- botones ---- */
+.btn{display:inline-flex;align-items:center;gap:.6em;cursor:pointer;border-radius:0;
+  font-family:var(--font-display);font-weight:700;font-size:clamp(.78rem,2.2vw,.95rem);letter-spacing:.14em;text-transform:uppercase;
+  padding:1.05em 1.9em;border:2px solid var(--ink);background:transparent;color:var(--ink);
+  transition:background .18s,color .18s,border-color .18s,transform .12s}
+.btn svg{width:1.15em;height:1.15em;fill:currentColor;flex:none}
+.btn:hover{background:var(--ink);color:#000}
+.btn:active{transform:translateY(2px)}
+.btn.v{background:var(--accent);border-color:var(--accent);color:#04140a}
+.btn.v:hover{background:#fff;border-color:#fff;color:#000}
+
+/* ---- toast ---- */
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(8px);z-index:90;
+  background:var(--accent);color:#04140a;font-weight:700;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.8em 1.2em;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ---- reveal on scroll (solo con JS) ---- */
+html.js .reveal{opacity:0;transform:translateY(34px);
+  transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+html.js .reveal.in{opacity:1;transform:none}
+html.js .reveal.d1{transition-delay:.1s}
+html.js .reveal.d2{transition-delay:.22s}
+html.js .reveal.d3{transition-delay:.34s}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important}
+  html.js .reveal{opacity:1!important;transform:none!important;transition:none!important}
+}
