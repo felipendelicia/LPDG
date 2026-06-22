@@ -17,7 +17,7 @@ Deploy: push a `main` → GitHub Pages sirve la raíz `/` (https://felipendelici
 - **Sistema visual en `styles.css`** (raíz): tokens de color (CSS vars), fuentes, y primitivas (`.nav`, `.btn`, `.toast`, `.eyebrow`, `.bracket`, `.reveal`, grano). Las páginas lo linkean y solo agregan su CSS específico. NO duplicar tokens ni colores en cada página. `legacy/` NO usa `styles.css` (snapshots autocontenidos con identidad propia).
 - Portada actual = `index.html` · galería = `archivo.html` · portadas viejas = `legacy/`.
 - Toda imagen va en `photos/`. Desde `legacy/` se referencia `../photos/…`.
-- Logo de marca: `photos/logo-lpdg.svg` (wordmark "Lpdg" en Cedarville Cursive **vectorizado a paths**, color `--accent`) + `photos/logo-lpdg.png` (raster transparente). Usado como favicon. Regenerable con fontTools desde el TTF de Cedarville Cursive (gstatic).
+- Logo de marca: `photos/logo-lpdg.svg` (wordmark "Lpdg" en Cedarville Cursive **vectorizado a paths**, color `--accent`) + `photos/logo-lpdg.png` (raster transparente). Usado en el nav (`.brand`), como marca grande y favicon/og. Regenerable con fontTools desde el TTF de Cedarville Cursive (gstatic).
 - **Portada nueva**: mover la actual a `legacy/` (arreglar rutas a `../photos/` + banner READ ONLY que vuelve a `../archivo.html`), escribir la nueva en `index.html`, y sumar una card en `archivo.html`.
 - Español rioplatense en todo el texto visible.
 - Commits sin atribución a Claude/Anthropic.

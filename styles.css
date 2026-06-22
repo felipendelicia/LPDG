@@ -42,9 +42,9 @@ body::after{
 
 /* ---- navegación ---- */
 .nav{position:fixed;top:0;left:0;width:100%;z-index:60;display:flex;justify-content:space-between;align-items:center;
-  padding:clamp(1rem,3vw,1.7rem) var(--pad-x);mix-blend-mode:difference}
-.brand{display:flex;align-items:center;gap:.6em;font-weight:800;letter-spacing:.04em;font-size:.95rem;color:#fff}
-.brand .tri{width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:15px solid #fff}
+  padding:clamp(1rem,3vw,1.7rem) var(--pad-x)}
+.brand{display:flex;align-items:center;gap:.55em;font-weight:800;letter-spacing:.04em;font-size:.95rem;color:#fff;text-decoration:none}
+.brand img{height:clamp(28px,5.5vw,38px);width:auto;display:block}
 .nav-r{display:flex;align-items:center;gap:clamp(1rem,4vw,2rem)}
 .nav-r a{color:#fff;text-decoration:none;font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
   display:inline-flex;align-items:center;gap:.5em;transition:opacity .2s}
