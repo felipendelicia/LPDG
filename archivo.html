@@ -88,6 +88,7 @@
   .tag{font-weight:700;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;padding:.35em .7em;white-space:nowrap}
   .tag.live{background:var(--accent);color:#04140a}
   .tag.ro{background:transparent;color:var(--mut);border:1px solid var(--line-2)}
+  .tag.standby{background:transparent;color:var(--accent);border:1px solid var(--accent)}
   .name{font-weight:800;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1;letter-spacing:-.02em;text-transform:uppercase}
   .desc{font-weight:500;font-size:.68rem;letter-spacing:.06em;color:var(--mut);line-height:1.5;text-transform:uppercase}
 </style>
@@ -108,16 +109,26 @@
     <div class="grid">
 
       <a class="card reveal" href="index.html">
-        <div class="shot"><iframe src="index.html" loading="lazy" tabindex="-1" scrolling="no" title="En espera"></iframe></div>
+        <div class="shot"><iframe src="index.html" loading="lazy" tabindex="-1" scrolling="no" title="Se busca: la rubia"></iframe></div>
         <span class="open">abrir ↗</span>
         <div class="meta">
-          <div class="row"><span class="idx">02 · actual</span><span class="tag live">en vivo</span></div>
-          <div class="name">En espera</div>
-          <div class="desc">Under · negro & verde · timer</div>
+          <div class="row"><span class="idx">03 · actual</span><span class="tag live">en vivo</span></div>
+          <div class="name">Se busca</div>
+          <div class="desc">Afiche desaparecida · papel &amp; sello · juntada 10.07</div>
         </div>
       </a>
 
-      <a class="card reveal d1" href="legacy/cumple-gianni.html">
+      <a class="card reveal d1" href="en-espera.html">
+        <div class="shot"><iframe src="en-espera.html" loading="lazy" tabindex="-1" scrolling="no" title="En espera"></iframe></div>
+        <span class="open">abrir ↗</span>
+        <div class="meta">
+          <div class="row"><span class="idx">02 · standby</span><span class="tag standby">especial</span></div>
+          <div class="name">En espera</div>
+          <div class="desc">Estado base · vuelve entre juntadas</div>
+        </div>
+      </a>
+
+      <a class="card reveal d2" href="legacy/cumple-gianni.html">
         <div class="shot"><iframe src="legacy/cumple-gianni.html" loading="lazy" tabindex="-1" scrolling="no" title="Cumple de Gianni"></iframe></div>
         <span class="open">abrir ↗</span>
         <div class="meta">
