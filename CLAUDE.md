@@ -23,7 +23,7 @@ Deploy: push a `main` → GitHub Pages sirve la raíz `/` (https://felipendelici
 - Commits sin atribución a Claude/Anthropic.
 
 ## Gotchas
-- El timer de `index.html` cuenta hacia arriba desde un ancla fija: `ANCHOR = new Date('2026-06-20T19:00:00-03:00')` (última juntada). Para cambiar el origen, editar esa constante.
+- El timer de `index.html` cuenta hacia arriba desde un ancla fija: `ANCHOR = new Date('2026-07-10T19:00:00-03:00')` (última juntada). Para cambiar el origen, editar esa constante.
 - `archivo.html` escala cada preview con JS (`--s = clientWidth/1140`); las cards usan `aspect-ratio:1140/780`. Respetarlo al agregar.
 - Reveal on scroll: las secciones `.reveal` se ocultan **solo** si `<html class="js">` (sin JS quedan visibles) y aparecen con IntersectionObserver. Para screenshots headless forzar `--force-prefers-reduced-motion` (las muestra ya visibles) o sale en negro.
 - `.superpowers/` está en `.gitignore`.
